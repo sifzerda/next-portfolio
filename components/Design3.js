@@ -1,12 +1,23 @@
 
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Draggable from "react-draggable";
 
 export default function VirtualClassroomPage() {
   const nodeRef = useRef(null);
   const [openMenu, setOpenMenu] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Window dragging disables on screen size smaller than 768 (phones can't drag)
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
 
   const menuItems = {
     File: ["New Session", "Open", "Save", "Export", "Exit"],
@@ -15,10 +26,25 @@ export default function VirtualClassroomPage() {
     Help: ["Documentation", "Support", "Report Issue", "About"],
   };
 
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  // Update position when screen size changes
+  useEffect(() => {
+    if (isMobile) {
+      setPosition({ x: 0, y: 0 }); // Reset to top-left when mobile
+    }
+  }, [isMobile]);
+
+  const draggableProps = isMobile
+    ? { disabled: true, position } // disabled on mobile and reset position
+    : { nodeRef, handle: ".drag-handle", bounds: "parent", position, onDrag: (_, data) => setPosition({ x: data.x, y: data.y }) };
+
   return (
     <div className="w-screen h-screen bg-black flex items-center justify-center p-4 overflow-hidden">
-      <Draggable nodeRef={nodeRef} handle=".drag-handle" bounds="parent">
-        <div ref={nodeRef} className="w-full max-w-5xl border border-zinc-300 bg-[radial-gradient(circle_at_top_left,_rgba(26,75,207,1),_transparent_60%)] rounded-sm overflow-hidden cursor-default">
+      <Draggable {...draggableProps} nodeRef={nodeRef}>
+        <div
+          ref={nodeRef}
+          className={`${isMobile ? "w-full h-full" : "w-full max-w-5xl"} border border-zinc-300 bg-[radial-gradient(circle_at_top_left,_rgba(26,75,207,1),_transparent_60%)] rounded-sm overflow-hidden cursor-default`}>
 
           {/* Header / Drag Handle */}
           <div className="border-b border-zinc-500/40 bg-gradient-to-b from-[#ffffff] via-[#c0c8d6] to-[#9aa6b4] text-[10px] text-black">
@@ -71,12 +97,13 @@ export default function VirtualClassroomPage() {
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
                   <div>
                     <div className="flex items-center justify-between mb-6 uppercase text-[11px] tracking-[0.3em] text-zinc-100 font-semibold">
-                      <span>Next Gen</span>
-                      <span>Learning:</span>
+                      <span>React</span>
+                      <span>Next.js</span>
+                      <span>Learning</span>
                     </div>
 
                     <h1
-                      className="text-[#2cff66] uppercase leading-[0.85] tracking-tight font-black text-5xl sm:text-6xl md:text-7xl max-w-3xl"
+                      className="text-[#2cff66] uppercase leading-[0.85] font-black text-5xl sm:text-6xl md:text-7xl max-w-3xl"
                       style={{
                         fontFamily: "Impact, Haettenschweiler, Arial Narrow Bold, sans-serif",
                         textShadow: "0 0 12px rgba(44,255,102,0.35)",
