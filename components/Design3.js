@@ -18,10 +18,8 @@ export default function VirtualClassroomPage() {
   return (
     <div className="w-screen h-screen bg-black flex items-center justify-center p-4 overflow-hidden">
       <Draggable nodeRef={nodeRef} handle=".drag-handle" bounds="parent">
-        <div
-          ref={nodeRef}
-          className="w-full max-w-5xl border border-zinc-300 bg-[radial-gradient(circle_at_top_left,_rgba(26,75,207,1),_transparent_60%)] rounded-sm overflow-hidden cursor-default"
-        >
+        <div ref={nodeRef} className="w-full max-w-5xl border border-zinc-300 bg-[radial-gradient(circle_at_top_left,_rgba(26,75,207,1),_transparent_60%)] rounded-sm overflow-hidden cursor-default">
+
           {/* Header / Drag Handle */}
           <div className="border-b border-zinc-500/40 bg-gradient-to-b from-[#ffffff] via-[#c0c8d6] to-[#9aa6b4] text-[10px] text-black">
             <div className="drag-handle flex items-center justify-between px-4 py-3 border-b border-zinc-500/30 cursor-move">
@@ -68,28 +66,42 @@ export default function VirtualClassroomPage() {
             {/* Left Section */}
             <div className="relative border-r border-zinc-300/60 p-6 md:p-8">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(70,140,255,0.15),_transparent_55%)] pointer-events-none" />
-
               <div className="relative z-10 h-full flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center justify-between mb-6 uppercase text-[11px] tracking-[0.3em] text-zinc-100 font-semibold">
-                    <span>Next Gen</span>
-                    <span>Learning:</span>
+
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
+                  <div>
+                    <div className="flex items-center justify-between mb-6 uppercase text-[11px] tracking-[0.3em] text-zinc-100 font-semibold">
+                      <span>Next Gen</span>
+                      <span>Learning:</span>
+                    </div>
+
+                    <h1
+                      className="text-[#2cff66] uppercase leading-[0.85] tracking-tight font-black text-5xl sm:text-6xl md:text-7xl max-w-3xl"
+                      style={{
+                        fontFamily: "Impact, Haettenschweiler, Arial Narrow Bold, sans-serif",
+                        textShadow: "0 0 12px rgba(44,255,102,0.35)",
+                      }}
+                    >
+                      Welcome
+                      <br />
+                      To My
+                      <br />
+                      Portfolio
+                    </h1>
                   </div>
 
-                  <h1
-                    className="text-[#2cff66] uppercase leading-[0.85] tracking-tight font-black text-5xl sm:text-6xl md:text-7xl max-w-3xl"
-                    style={{
-                      fontFamily: "Impact, Haettenschweiler, Arial Narrow Bold, sans-serif",
-                      textShadow: "0 0 12px rgba(44,255,102,0.35)",
-                    }}
-                  >
-                    Beyond The
-                    <br />
-                    Virtual
-                    <br />
-                    Classroom
-                  </h1>
+
+
+
+                  <div className="w-40 h-48 border border-zinc-300/60 bg-black/30 flex items-center justify-center text-zinc-400 text-[10px] uppercase tracking-[0.25em] shrink-0">
+                    Photo
+                  </div>
                 </div>
+
+
+
+
+
 
                 <div className="mt-12 flex gap-3 max-w-md">
                   <div className="pt-1 text-zinc-200 text-xl">▶</div>
@@ -101,8 +113,42 @@ export default function VirtualClassroomPage() {
             </div>
 
             {/* Right Aside */}
+
             <aside className="border border-zinc-300/60 bg-gradient-to-b from-[#08131f] via-[#1a4bcf] to-[#06111b] p-6 flex flex-col justify-between text-zinc-100">
-              {/* existing aside content here */}
+              <div>
+                <div className="mb-10">
+                  <p className="uppercase text-[10px] tracking-[0.25em] text-zinc-300 mb-3"> Presenters: </p>
+                  <div className="space-y-6">
+                    <div>
+                      <h2 className="text-[#39ff63] text-2xl uppercase font-black leading-none" style={{ fontFamily: "Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" }} > Nina Davis </h2>
+                      <p className="text-[9px] uppercase tracking-[0.15em] text-zinc-300 mt-2 leading-relaxed"> Educational Designer & Future Learning Strategist </p>
+                    </div>
+                    <div>
+                      <h2 className="text-[#39ff63] text-2xl uppercase font-black leading-none" style={{ fontFamily: "Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" }} > Carlos Vega </h2>
+                      <p className="text-[9px] uppercase tracking-[0.15em] text-zinc-300 mt-2 leading-relaxed"> Hybrid Systems Researcher & Digital Educator </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="space-y-6 text-[10px] uppercase tracking-[0.2em]">
+                  <div className="flex justify-between border-b border-zinc-500/20 pb-2">
+                    <span className="text-zinc-300">Date:</span>
+                    <div className="text-right text-[#39ff63] font-bold">
+                      <div>6 /</div>
+                      <div>27 /</div>
+                      <div>2026</div>
+                    </div>
+                  </div>
+                  <div className="flex justify-between border-b border-zinc-500/20 pb-2">
+                    <span className="text-zinc-300">Time:</span>
+                    <div className="text-right text-[#39ff63] font-bold">
+                      <div>2:00</div>
+                      <div>PM</div>
+                      <div>GMT</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button className="mt-12 border border-[#39ff63] text-[#39ff63] hover:bg-[#39ff63] hover:text-black transition-all duration-200 uppercase tracking-[0.25em] text-xs py-3 font-bold"> Register </button>
             </aside>
           </div>
         </div>
@@ -110,4 +156,3 @@ export default function VirtualClassroomPage() {
     </div>
   );
 }
-
