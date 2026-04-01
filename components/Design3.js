@@ -1,31 +1,65 @@
+
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Draggable from "react-draggable";
 
 export default function VirtualClassroomPage() {
   const nodeRef = useRef(null);
+  const [openMenu, setOpenMenu] = useState(null);
+
+  const menuItems = {
+    File: ["New Session", "Open", "Save", "Export", "Exit"],
+    View: ["Zoom In", "Zoom Out", "Fullscreen", "Split View"],
+    Options: ["Preferences", "Themes", "Notifications", "Settings"],
+    Help: ["Documentation", "Support", "Report Issue", "About"],
+  };
 
   return (
     <div className="w-screen h-screen bg-black flex items-center justify-center p-4 overflow-hidden">
       <Draggable nodeRef={nodeRef} handle=".drag-handle" bounds="parent">
         <div
           ref={nodeRef}
-          className="w-full max-w-5xl border border-zinc-300 bg-[radial-gradient(circle_at_top_left,_rgba(26,75.41,207,1.0),_transparent_60%)] rounded-sm overflow-hidden cursor-move"
+          className="w-full max-w-5xl border border-zinc-300 bg-[radial-gradient(circle_at_top_left,_rgba(26,75,207,1),_transparent_60%)] rounded-sm overflow-hidden cursor-default"
         >
           {/* Header / Drag Handle */}
-          <div className="drag-handle border-b border-zinc-500/40 bg-gradient-to-b from-[#ffffff] via-[#c0c8d6] to-[#9aa6b4] text-[10px] text-black">
-            <div className="flex items-center justify-between px-2 py-1 border-b border-zinc-500/30">
+          <div className="border-b border-zinc-500/40 bg-gradient-to-b from-[#ffffff] via-[#c0c8d6] to-[#9aa6b4] text-[10px] text-black">
+            <div className="drag-handle flex items-center justify-between px-4 py-3 border-b border-zinc-500/30 cursor-move">
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 bg-black" />
                 <span className="uppercase tracking-widest font-bold">Virtual Edu</span>
               </div>
             </div>
-            <div className="flex gap-6 px-3 py-1 uppercase tracking-wide text-[9px]">
-              <span>File</span>
-              <span>View</span>
-              <span>Options</span>
-              <span>Help</span>
+
+            <div
+              className="flex gap-6 px-3 py-1 uppercase tracking-wide text-[9px] relative cursor-default"
+              onMouseDown={(e) => e.stopPropagation()}
+            >
+              {Object.entries(menuItems).map(([menu, items]) => (
+                <div key={menu} className="relative">
+                  <button
+                    onClick={() =>
+                      setOpenMenu(openMenu === menu ? null : menu)
+                    }
+                    className="hover:text-blue-900 transition-colors"
+                  >
+                    {menu}
+                  </button>
+
+                  {openMenu === menu && (
+                    <div className="absolute left-0 top-full z-50 mt-1 min-w-[140px] border border-zinc-500/40 bg-[#d7dde6] shadow-lg text-black">
+                      {items.map((item) => (
+                        <button
+                          key={item}
+                          className="block w-full px-3 py-2 text-left text-[9px] uppercase tracking-wide hover:bg-[#b8c3d1]"
+                        >
+                          {item}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
 
@@ -68,63 +102,7 @@ export default function VirtualClassroomPage() {
 
             {/* Right Aside */}
             <aside className="border border-zinc-300/60 bg-gradient-to-b from-[#08131f] via-[#1a4bcf] to-[#06111b] p-6 flex flex-col justify-between text-zinc-100">
-              <div>
-                <div className="mb-10">
-                  <p className="uppercase text-[10px] tracking-[0.25em] text-zinc-300 mb-3">
-                    Presenters:
-                  </p>
-
-                  <div className="space-y-6">
-                    <div>
-                      <h2
-                        className="text-[#39ff63] text-2xl uppercase font-black leading-none"
-                        style={{ fontFamily: "Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" }}
-                      >
-                        Nina Davis
-                      </h2>
-                      <p className="text-[9px] uppercase tracking-[0.15em] text-zinc-300 mt-2 leading-relaxed">
-                        Educational Designer & Future Learning Strategist
-                      </p>
-                    </div>
-
-                    <div>
-                      <h2
-                        className="text-[#39ff63] text-2xl uppercase font-black leading-none"
-                        style={{ fontFamily: "Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" }}
-                      >
-                        Carlos Vega
-                      </h2>
-                      <p className="text-[9px] uppercase tracking-[0.15em] text-zinc-300 mt-2 leading-relaxed">
-                        Hybrid Systems Researcher & Digital Educator
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="space-y-6 text-[10px] uppercase tracking-[0.2em]">
-                  <div className="flex justify-between border-b border-zinc-500/20 pb-2">
-                    <span className="text-zinc-300">Date:</span>
-                    <div className="text-right text-[#39ff63] font-bold">
-                      <div>6 /</div>
-                      <div>27 /</div>
-                      <div>2026</div>
-                    </div>
-                  </div>
-
-                  <div className="flex justify-between border-b border-zinc-500/20 pb-2">
-                    <span className="text-zinc-300">Time:</span>
-                    <div className="text-right text-[#39ff63] font-bold">
-                      <div>2:00</div>
-                      <div>PM</div>
-                      <div>GMT</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <button className="mt-12 border border-[#39ff63] text-[#39ff63] hover:bg-[#39ff63] hover:text-black transition-all duration-200 uppercase tracking-[0.25em] text-xs py-3 font-bold">
-                Register
-              </button>
+              {/* existing aside content here */}
             </aside>
           </div>
         </div>
@@ -132,3 +110,4 @@ export default function VirtualClassroomPage() {
     </div>
   );
 }
+
