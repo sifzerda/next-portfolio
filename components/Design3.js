@@ -117,18 +117,10 @@ export default function VirtualClassroomPage() {
                     </h1>
                   </div>
 
-
-
-
                   <div className="w-40 h-48 border border-zinc-300/60 bg-black/30 flex items-center justify-center text-zinc-400 text-[10px] uppercase tracking-[0.25em] shrink-0">
                     Photo
                   </div>
                 </div>
-
-
-
-
-
 
                 <div className="mt-12 flex gap-3 max-w-md">
                   <div className="pt-1 text-zinc-200 text-xl">▶</div>
