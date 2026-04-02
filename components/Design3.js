@@ -43,8 +43,8 @@ export default function VirtualClassroomPage() {
     <div className="w-screen h-screen bg-black flex items-center justify-center p-4 overflow-hidden">
       <Draggable {...draggableProps} nodeRef={nodeRef}>
         <div
-  ref={nodeRef}
-  className={`
+          ref={nodeRef}
+          className={`
     ${isMobile ? "w-full h-full" : "w-full max-w-5xl"}
     max-h-[calc(100vh-2rem)]
     border border-zinc-300
@@ -54,7 +54,7 @@ export default function VirtualClassroomPage() {
     overflow-x-hidden
     cursor-default
   `}
->
+        >
 
           {/* Header / Drag Handle */}
           <div className="border-b border-zinc-500/40 bg-gradient-to-b from-[#ffffff] via-[#c0c8d6] to-[#9aa6b4] text-[10px] text-black">
