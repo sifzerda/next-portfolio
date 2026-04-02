@@ -43,8 +43,18 @@ export default function VirtualClassroomPage() {
     <div className="w-screen h-screen bg-black flex items-center justify-center p-4 overflow-hidden">
       <Draggable {...draggableProps} nodeRef={nodeRef}>
         <div
-          ref={nodeRef}
-          className={`${isMobile ? "w-full h-full" : "w-full max-w-5xl"} border border-zinc-300 bg-[radial-gradient(circle_at_top_left,_rgba(26,75,207,1),_transparent_60%)] rounded-sm overflow-hidden cursor-default`}>
+  ref={nodeRef}
+  className={`
+    ${isMobile ? "w-full h-full" : "w-full max-w-5xl"}
+    max-h-[calc(100vh-2rem)]
+    border border-zinc-300
+    bg-[radial-gradient(circle_at_top_left,_rgba(26,75,207,1),_transparent_60%)]
+    rounded-sm
+    overflow-y-auto
+    overflow-x-hidden
+    cursor-default
+  `}
+>
 
           {/* Header / Drag Handle */}
           <div className="border-b border-zinc-500/40 bg-gradient-to-b from-[#ffffff] via-[#c0c8d6] to-[#9aa6b4] text-[10px] text-black">
@@ -88,7 +98,7 @@ export default function VirtualClassroomPage() {
           </div>
 
           {/* Main Content */}
-          <div className="grid md:grid-cols-[1fr_220px] min-h-[600px]">
+          <div className="grid md:grid-cols-[1fr_220px] min-h-[600px] md:min-h-0">
             {/* Left Section */}
             <div className="relative border-r border-zinc-300/60 p-6 md:p-8">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(70,140,255,0.15),_transparent_55%)] pointer-events-none" />
@@ -133,7 +143,7 @@ export default function VirtualClassroomPage() {
 
             {/* Right Aside */}
 
-            <aside className="border border-zinc-300/60 bg-gradient-to-b from-[#08131f] via-[#1a4bcf] to-[#06111b] p-6 flex flex-col justify-between text-zinc-100">
+            <aside className="border border-zinc-300/60 bg-gradient-to-b from-[#08131f] via-[#1a4bcf] to-[#06111b] p-6 flex flex-col justify-between text-zinc-100 min-h-full">
               <div>
                 <div className="mb-10">
                   <p className="uppercase text-[10px] tracking-[0.25em] text-zinc-300 mb-3"> Presenters: </p>
