@@ -179,57 +179,106 @@ export default function VirtualClassroomPage() {
                   </div>
                 </div>
 
-                <div className="mt-12 flex gap-3 max-w-md">
-                  <div className="pt-1 text-zinc-200 text-xl">▶</div>
-                  <p className="text-[11px] sm:text-xs uppercase leading-relaxed tracking-[0.15em] text-zinc-200 max-w-xs">
-                    Explore new learning frameworks, digital habits, and design strategies that redefine the next generation of learners.
-                  </p>
+
+
+
+
+                <div className="mt-12 flex flex-col gap-2 max-w-md">
+                  <div className="flex gap-3">
+                    <div className="pt-1 text-zinc-200 text-xl">▶</div>
+                    <p className="text-[11px] sm:text-xs uppercase leading-relaxed tracking-[0.15em] text-zinc-200">
+                      Monash Fullstack Coding Bootcamp Graduate
+                    </p>
+                  </div>
+
+                  <div className="flex gap-3">
+                    <div className="pt-1 text-zinc-200 text-xl">▶</div>
+                    <p className="text-[11px] sm:text-xs uppercase leading-relaxed tracking-[0.15em] text-zinc-200">
+                      Creativity, attention to detail, and passion for learning
+                    </p>
+                  </div>
+
+                  <div className="flex gap-3">
+                    <div className="pt-1 text-zinc-200 text-xl">▶</div>
+                    <p className="text-[11px] sm:text-xs uppercase leading-relaxed tracking-[0.15em] text-zinc-200">
+                      Eager to contribute to innovative projects and collaborate with talented teams
+                    </p>
+                  </div>
                 </div>
+
+
+
+
+
               </div>
             </div>
 
             {/* Right Aside */}
 
-            <aside className="border border-zinc-300/60 bg-gradient-to-b from-[#08131f] via-[#1a4bcf] to-[#06111b] p-6 flex flex-col justify-between text-zinc-100 min-h-full">
-              <div>
-                <div className="mb-10">
-                  <p className="uppercase text-[10px] tracking-[0.25em] text-zinc-300 mb-3"> Name: </p>
-                  <div className="space-y-6">
-                    <div>
-                      <h2 className="text-[#39ff63] text-2xl uppercase font-black leading-none" style={{ fontFamily: "Impact, Haettenschweiler, Arial Narrow, sans-serif" }} > Troy Damon </h2>
-                      <p className="text-[9px] uppercase tracking-[0.15em] text-zinc-300 mt-2 leading-relaxed"> Fullstack Web Developer and Coder </p>
-                    </div>
-                    <div>
-                      <h2 className="text-[#39ff63] text-2xl uppercase font-black leading-none" style={{ fontFamily: "Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" }} > Heading 2 </h2>
-                      <p className="text-[9px] uppercase tracking-[0.15em] text-zinc-300 mt-2 leading-relaxed"> Hybrid Systems Researcher & Digital Educator </p>
-                    </div>
-                  </div>
-                </div>
+<aside className="border border-zinc-300/60 bg-gradient-to-b from-[#08131f] via-[#1a4bcf] to-[#06111b] p-6 flex flex-col justify-between text-zinc-100 min-h-full">
+  {/* Date & Time above Name */}
+  <div className="mb-6">
+    <div className="flex justify-between border-b border-zinc-500/20 pb-2">
+      <span className="text-zinc-300">Date:</span>
+      <div className="text-right text-[#39ff63] font-bold">
+        <div>{day} / {month} / {year}</div>
+      </div>
+    </div>
 
-                <div className="flex justify-between border-b border-zinc-500/20 pb-2">
-                  <span className="text-zinc-300">Date:</span>
-                  <div className="text-right text-[#39ff63] font-bold">
-                    <div>{day} / {month} / {year}</div>
-                  </div>
-                </div>
+    <div className="flex justify-between border-b border-zinc-500/20 pb-2 mt-2">
+      <span className="text-zinc-300">Time:</span>
+      <div className="text-right text-[#39ff63] font-bold">
+        <div>{time}</div>
+        <div className="text-[8px]">
+          GMT {currentDateTime.getTimezoneOffset() <= 0 ? "+" : "-"}
+          {String(Math.floor(Math.abs(currentDateTime.getTimezoneOffset()) / 60)).padStart(2, "0")}
+          :
+          {String(Math.abs(currentDateTime.getTimezoneOffset()) % 60).padStart(2, "0")} – {timezone}
+        </div>
+      </div>
+    </div>
+  </div>
 
-                <div className="flex justify-between border-b border-zinc-500/20 pb-2">
-                  <span className="text-zinc-300">Time:</span>
-                  <div className="text-right text-[#39ff63] font-bold">
-                    <div>{time}</div>
-                    <div className="text-[8px]">
-                      GMT {currentDateTime.getTimezoneOffset() <= 0 ? "+" : "-"}
-                      {String(Math.floor(Math.abs(currentDateTime.getTimezoneOffset()) / 60)).padStart(2, "0")}
-                      :
-                      {String(Math.abs(currentDateTime.getTimezoneOffset()) % 60).padStart(2, "0")} – {timezone}
-                    </div>
-                  </div>
-                </div>
+  {/* Name Section */}
+  <div className="mb-10">
+    <p className="uppercase text-[10px] tracking-[0.25em] text-zinc-300 mb-3">Name:</p>
+    <div className="space-y-6">
+      <div>
+        <h2 className="text-[#39ff63] text-2xl uppercase font-black leading-none" style={{ fontFamily: "Impact, Haettenschweiler, Arial Narrow, sans-serif" }}>Troy Damon</h2>
+        <p className="text-[9px] uppercase tracking-[0.15em] text-zinc-300 mt-2 leading-relaxed">Fullstack Web Developer and Coder</p>
+      </div>
+      <div>
+        <h2 className="text-[#39ff63] text-2xl uppercase font-black leading-none" style={{ fontFamily: "Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" }}>Heading 2</h2>
+        <p className="text-[9px] uppercase tracking-[0.15em] text-zinc-300 mt-2 leading-relaxed">Hybrid Systems Researcher & Digital Educator</p>
+      </div>
+    </div>
+  </div>
 
-              </div>
-              <button className="mt-12 border border-[#39ff63] text-[#39ff63] hover:bg-[#39ff63] hover:text-black transition-all duration-200 uppercase tracking-[0.25em] text-xs py-3 font-bold"> My Apps </button>
-            </aside>
+  <button className="mt-12 border border-[#39ff63] text-[#39ff63] hover:bg-[#39ff63] hover:text-black transition-all duration-200 uppercase tracking-[0.25em] text-xs py-3 font-bold">My Apps</button>
+</aside>
           </div>
+
+          {/* Footer */}
+          <div className="border-t border-zinc-500/40 bg-gradient-to-b from-[#1b2633] via-[#111827] to-[#0a0f16] px-4 py-3">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-[10px] uppercase tracking-[0.2em] text-zinc-300">
+
+              <div className="flex items-center gap-4">
+                <span className="text-[#39ff63] font-bold">Status: Deployed</span>
+                <span className="text-zinc-500">|</span>
+                <span>Portfolio Version 3.0</span>
+                <span className="text-zinc-500">|</span>
+                <span>Built with Next.js</span>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-[#39ff63] animate-pulse"></div>
+                <span>Available for Freelance Projects</span>
+              </div>
+
+            </div>
+          </div>
+          {/* End Footer */}
+
         </div>
       </Draggable>
     </div>
