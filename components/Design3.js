@@ -121,6 +121,7 @@ export default function VirtualClassroomPage() {
                 <div
                   key={menu}
                   className="relative self-stretch flex"
+                  onMouseLeave={() => setOpenMenu(null)} // <-- close when mouse leaves
                 >
                   <button
                     onClick={() => setOpenMenu(openMenu === menu ? null : menu)}
@@ -179,10 +180,6 @@ export default function VirtualClassroomPage() {
                   </div>
                 </div>
 
-
-
-
-
                 <div className="mt-12 flex flex-col gap-2 max-w-md">
                   <div className="flex gap-3">
                     <div className="pt-1 text-zinc-200 text-xl">▶</div>
@@ -206,56 +203,58 @@ export default function VirtualClassroomPage() {
                   </div>
                 </div>
 
-
-
-
-
               </div>
             </div>
 
             {/* Right Aside */}
 
-<aside className="border border-zinc-300/60 bg-gradient-to-b from-[#08131f] via-[#1a4bcf] to-[#06111b] p-6 flex flex-col justify-between text-zinc-100 min-h-full">
-  {/* Date & Time above Name */}
-  <div className="mb-6">
-    <div className="flex justify-between border-b border-zinc-500/20 pb-2">
-      <span className="text-zinc-300">Date:</span>
-      <div className="text-right text-[#39ff63] font-bold">
-        <div>{day} / {month} / {year}</div>
-      </div>
-    </div>
+            <aside className="border border-zinc-300/60 bg-gradient-to-b from-[#08131f] via-[#1a4bcf] to-[#06111b] p-6 flex flex-col justify-between text-zinc-100 min-h-full">
 
-    <div className="flex justify-between border-b border-zinc-500/20 pb-2 mt-2">
-      <span className="text-zinc-300">Time:</span>
-      <div className="text-right text-[#39ff63] font-bold">
-        <div>{time}</div>
-        <div className="text-[8px]">
-          GMT {currentDateTime.getTimezoneOffset() <= 0 ? "+" : "-"}
-          {String(Math.floor(Math.abs(currentDateTime.getTimezoneOffset()) / 60)).padStart(2, "0")}
-          :
-          {String(Math.abs(currentDateTime.getTimezoneOffset()) % 60).padStart(2, "0")} – {timezone}
-        </div>
-      </div>
-    </div>
-  </div>
+              {/* Top Section: Date & Time + Name */}
+              <div className="flex flex-col gap-4">
 
-  {/* Name Section */}
-  <div className="mb-10">
-    <p className="uppercase text-[10px] tracking-[0.25em] text-zinc-300 mb-3">Name:</p>
-    <div className="space-y-6">
-      <div>
-        <h2 className="text-[#39ff63] text-2xl uppercase font-black leading-none" style={{ fontFamily: "Impact, Haettenschweiler, Arial Narrow, sans-serif" }}>Troy Damon</h2>
-        <p className="text-[9px] uppercase tracking-[0.15em] text-zinc-300 mt-2 leading-relaxed">Fullstack Web Developer and Coder</p>
-      </div>
-      <div>
-        <h2 className="text-[#39ff63] text-2xl uppercase font-black leading-none" style={{ fontFamily: "Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" }}>Heading 2</h2>
-        <p className="text-[9px] uppercase tracking-[0.15em] text-zinc-300 mt-2 leading-relaxed">Hybrid Systems Researcher & Digital Educator</p>
-      </div>
-    </div>
-  </div>
+                {/* Date & Time Header (matches width of Name section) */}
+                <div className="flex flex-col gap-1 bg-[#0b1522] border border-zinc-500/30 rounded-sm px-3 py-2 text-[10px] uppercase tracking-[0.25em] w-full">
+                  <div className="flex justify-between items-center w-full">
+                    <span className="text-zinc-400">Date</span>
+                    <span className="text-[#39ff63] font-bold">
+                      {day.toString().padStart(2, "0")} / {month.toString().padStart(2, "0")} / {year}
+                    </span>
+                  </div>
 
-  <button className="mt-12 border border-[#39ff63] text-[#39ff63] hover:bg-[#39ff63] hover:text-black transition-all duration-200 uppercase tracking-[0.25em] text-xs py-3 font-bold">My Apps</button>
-</aside>
+                  <div className="flex justify-between items-center w-full">
+                    <span className="text-zinc-400">Time</span>
+                    <span className="text-[#39ff63] font-bold">{time}</span>
+                  </div>
+
+                  <div className="text-right text-white text-[8px] w-full break-words">
+                    GMT {currentDateTime.getTimezoneOffset() <= 0 ? "+" : "-"}
+                    {String(Math.floor(Math.abs(currentDateTime.getTimezoneOffset()) / 60)).padStart(2, "0")}
+                    :
+                    {String(Math.abs(currentDateTime.getTimezoneOffset()) % 60).padStart(2, "0")} – {timezone}
+                  </div>
+                </div>
+
+                {/* Name Section */}
+                <div>
+                  <p className="uppercase text-[10px] tracking-[0.25em] text-zinc-300 mb-3">Name:</p>
+                  <div className="space-y-6">
+                    <div>
+                      <h2 className="text-[#39ff63] text-2xl uppercase font-black leading-none" style={{ fontFamily: "Impact, Haettenschweiler, Arial Narrow, sans-serif" }}>Troy Damon</h2>
+                      <p className="text-[9px] uppercase tracking-[0.15em] text-zinc-300 mt-2 leading-relaxed">Fullstack Web Developer and Coder</p>
+                    </div>
+                    <div>
+                      <h2 className="text-[#39ff63] text-2xl uppercase font-black leading-none" style={{ fontFamily: "Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" }}>Heading 2</h2>
+                      <p className="text-[9px] uppercase tracking-[0.15em] text-zinc-300 mt-2 leading-relaxed">Hybrid Systems Researcher & Digital Educator</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <button className="mt-12 border border-[#39ff63] text-[#39ff63] hover:bg-[#39ff63] hover:text-black transition-all duration-200 uppercase tracking-[0.25em] text-xs py-3 font-bold">My Apps</button>
+            </aside>
+
           </div>
 
           {/* Footer */}
