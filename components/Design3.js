@@ -91,16 +91,11 @@ export default function VirtualClassroomPage() {
 
                 <div className="flex-1 ml-4 marquee-wrapper min-w-0">
                   <div className="marquee-content text-sm">
-                    <span className="whitespace-nowrap pr-16">
-                      This window is draggable
-                      <span className="mx-6"></span>
-                      Click the Menu Tabs to Navigate
-                      <span className="mx-6"></span>
+                    <span className="whitespace-nowrap pr-16">This window is draggable<span className="mx-6"></span>
+                      Click the Menu Tabs to Navigate<span className="mx-6"></span>
                     </span>
 
-                    <span className="whitespace-nowrap pr-16">
-                      This window is draggable
-                      <span className="mx-6"></span>
+                    <span className="whitespace-nowrap pr-16">This window is draggable<span className="mx-6"></span>
                       Click the Menu Tabs to Navigate
                       <span className="mx-6"></span>
                     </span>
@@ -109,41 +104,29 @@ export default function VirtualClassroomPage() {
 
               </div>
 
-              <button
-                onMouseDown={(e) => e.stopPropagation()}
-                className="ml-4 h-[42px] w-[42px] shrink-0 hover:bg-[#ff4c4c] hover:border-[#ff4c4c] hover:text-white active:bg-[#cc3a3a] text-black text-lg font-bold flex items-center justify-center">
+              <button onMouseDown={(e) => e.stopPropagation()} className="ml-4 h-[42px] w-[42px] shrink-0 hover:bg-[#ff4c4c] hover:border-[#ff4c4c] hover:text-white active:bg-[#cc3a3a] text-black text-lg font-bold flex items-center justify-center">
                 ✕
               </button>
             </div>
 
-            <div className="flex items-stretch gap-2 px-3 tracking-wide text-[12px] relative cursor-default h-9"
-              onMouseDown={(e) => e.stopPropagation()}>
+            <div className="flex items-stretch gap-2 px-3 tracking-wide text-[12px] relative cursor-default h-9" onMouseDown={(e) => e.stopPropagation()}>
               {Object.entries(menuItems).map(([menu, items]) => (
-                <div
-                  key={menu}
-                  className="relative self-stretch flex"
-                  onMouseLeave={() => setOpenMenu(null)}>
+                <div key={menu} className="relative self-stretch flex" onMouseLeave={() => setOpenMenu(null)}>
                   {menu === "About Me" ? (
                     // Direct link for "About Me"
-                    <Link
-                      href="/"
-                      className="h-full px-3 flex items-center text-black transition-colors duration-150 hover:bg-[#8f9caf]/50 hover:text-white">
+                    <Link href="/" className="h-full px-3 flex items-center text-black transition-colors duration-150 hover:bg-[#8f9caf]/50 hover:text-white">
                       About Me
                     </Link>
                   ) : (
                     <>
-                      <button
-                        onClick={() => setOpenMenu(openMenu === menu ? null : menu)}
-                        className="h-full px-3 flex items-center text-black transition-colors duration-150 hover:bg-[#8f9caf]/50 hover:text-white">
+                      <button onClick={() => setOpenMenu(openMenu === menu ? null : menu)} className="h-full px-3 flex items-center text-black transition-colors duration-150 hover:bg-[#8f9caf]/50 hover:text-white">
                         {menu}
                       </button>
 
                       {openMenu === menu && (
                         <div className="absolute left-0 top-full z-50 mt-1 min-w-[140px] border border-zinc-500/40 bg-[#d7dde6] shadow-lg text-black">
                           {items.map((item) => (
-                            <button
-                              key={item}
-                              className="block w-full px-3 py-2 text-left text-[9px] uppercase tracking-wide hover:bg-[#b8c3d1]">
+                            <button key={item} className="block w-full px-3 py-2 text-left text-[9px] uppercase tracking-wide hover:bg-[#b8c3d1]">
                               {item}
                             </button>
                           ))}
@@ -171,11 +154,10 @@ export default function VirtualClassroomPage() {
                       <span>Vercel</span>
                     </div>
 
-                    <h1 className="text-[#2cff66] uppercase leading-[0.85] font-black text-5xl sm:text-6xl md:text-7xl max-w-3xl"
-                      style={{
-                        fontFamily: "Impact, Haettenschweiler, Arial Narrow Bold, sans-serif",
-                        textShadow: "0 0 12px rgba(44,255,102,0.35)",
-                      }}>
+                    <h1 className="text-[#2cff66] uppercase leading-[0.85] font-black text-5xl sm:text-6xl md:text-7xl max-w-3xl" style={{
+                      fontFamily: "Impact, Haettenschweiler, Arial Narrow Bold, sans-serif",
+                      textShadow: "0 0 12px rgba(44,255,102,0.35)",
+                    }}>
                       Welcome
                       <br />
                       To My
