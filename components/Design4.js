@@ -1,3 +1,5 @@
+// This is Design3 but with dropdown lists under the menu items
+
 "use client";
 
 import Image from "next/image";
@@ -7,6 +9,7 @@ import Draggable from "react-draggable";
 
 export default function VirtualClassroomPage() {
   const nodeRef = useRef(null);
+  const [openMenu, setOpenMenu] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
 
   // date time logic
@@ -41,6 +44,13 @@ export default function VirtualClassroomPage() {
     window.addEventListener("resize", checkScreenSize);
     return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
+
+  const menuItems = {
+    "About Me": [], // No dropdown for "About Me"
+    Portfolio: ["Zoom In", "Zoom Out", "Fullscreen", "Split View"],
+    Resume: ["Preferences", "Themes", "Notifications", "Settings"],
+    Contact: ["Documentation", "Support", "Report Issue", "About"],
+  };
 
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
@@ -101,26 +111,33 @@ export default function VirtualClassroomPage() {
               </button>
             </div>
 
-            <div
-              className="flex items-stretch gap-2 px-3 tracking-wide text-[12px] relative cursor-default h-9"
-              onMouseDown={(e) => e.stopPropagation()}>
-              <Link
-                href="/" className="h-full px-3 flex items-center text-black transition-colors duration-150 hover:bg-[#8f9caf]/50 hover:text-white">
-                About Me
-              </Link>
+            <div className="flex items-stretch gap-2 px-3 tracking-wide text-[12px] relative cursor-default h-9" onMouseDown={(e) => e.stopPropagation()}>
+              {Object.entries(menuItems).map(([menu, items]) => (
+                <div key={menu} className="relative self-stretch flex" onMouseLeave={() => setOpenMenu(null)}>
+                  {menu === "About Me" ? (
+                    // Direct link for "About Me"
+                    <Link href="/" className="h-full px-3 flex items-center text-black transition-colors duration-150 hover:bg-[#8f9caf]/50 hover:text-white">
+                      About Me
+                    </Link>
+                  ) : (
+                    <>
+                      <button onClick={() => setOpenMenu(openMenu === menu ? null : menu)} className="h-full px-3 flex items-center text-black transition-colors duration-150 hover:bg-[#8f9caf]/50 hover:text-white">
+                        {menu}
+                      </button>
 
-              <Link
-                href="/portfolio" className="h-full px-3 flex items-center text-black transition-colors duration-150 hover:bg-[#8f9caf]/50 hover:text-white">
-                Portfolio
-              </Link>
-
-              <Link href="/resume" className="h-full px-3 flex items-center text-black transition-colors duration-150 hover:bg-[#8f9caf]/50 hover:text-white">
-                  Resume
-              </Link>
-
-              <Link href="/contact" className="h-full px-3 flex items-center text-black transition-colors duration-150 hover:bg-[#8f9caf]/50 hover:text-white">
-                Contact
-              </Link>
+                      {openMenu === menu && (
+                        <div className="absolute left-0 top-full z-50 mt-1 min-w-[140px] border border-zinc-500/40 bg-[#d7dde6] shadow-lg text-black">
+                          {items.map((item) => (
+                            <button key={item} className="block w-full px-3 py-2 text-left text-[9px] uppercase tracking-wide hover:bg-[#b8c3d1]">
+                              {item}
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
 
