@@ -1,6 +1,6 @@
-
 "use client";
 
+import Image from "next/image";
 import { useRef, useState, useEffect } from "react";
 import Draggable from "react-draggable";
 
@@ -8,6 +8,29 @@ export default function VirtualClassroomPage() {
   const nodeRef = useRef(null);
   const [openMenu, setOpenMenu] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
+
+  // date time logic
+  const [currentDateTime, setCurrentDateTime] = useState(new Date());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentDateTime(new Date());
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const day = currentDateTime.getDate();
+  const month = currentDateTime.getMonth() + 1;
+  const year = currentDateTime.getFullYear();
+
+  const time = currentDateTime.toLocaleTimeString([], {
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+  });
+
+  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  // ---------------------------------------------//
 
   // Window dragging disables on screen size smaller than 768 (phones can't drag)
   useEffect(() => {
@@ -53,30 +76,53 @@ export default function VirtualClassroomPage() {
     overflow-y-auto
     overflow-x-hidden
     cursor-default
-  `}
-        >
+  `}>
 
           {/* Header / Drag Handle */}
           <div className="border-b border-zinc-500/40 bg-gradient-to-b from-[#ffffff] via-[#c0c8d6] to-[#9aa6b4] text-[10px] text-black">
-            <div className="drag-handle flex items-center justify-between px-4 py-3 border-b border-zinc-500/30 cursor-move">
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-black" />
-                <span className="uppercase tracking-widest font-bold">Virtual Edu</span>
+
+            <div className="drag-handle flex items-center justify-between border-b border-zinc-500/30 cursor-move overflow-hidden">
+              <div className="flex items-center gap-2 min-w-0 flex-1">
+
+                <div className="w-5 h-5 relative shrink-0 ml-3">
+                  <Image src="/fox.svg" alt="sifzerda logo" fill className="object-contain" />
+                </div>
+
+                <div className="flex-1 ml-4 marquee-wrapper min-w-0">
+                  <div className="marquee-content text-sm">
+                    <span className="whitespace-nowrap pr-16">
+                      This window is draggable
+                      <span className="mx-6"></span>
+                      Click the Menu Tabs to Navigate
+                      <span className="mx-6"></span>
+                    </span>
+
+                    <span className="whitespace-nowrap pr-16">
+                      This window is draggable
+                      <span className="mx-6"></span>
+                      Click the Menu Tabs to Navigate
+                      <span className="mx-6"></span>
+                    </span>
+                  </div>
+                </div>
+
+
               </div>
+
+              <button onMouseDown={(e) => e.stopPropagation()}
+                className="ml-4 h-[42px] w-[42px] shrink-0 border border-zinc-600 bg-[#d7dde6] hover:bg-[#c5ccd6] active:bg-[#aeb7c4] text-black text-sm font-bold flex items-center justify-center">
+                ×
+              </button>
             </div>
 
-            <div
-              className="flex gap-6 px-3 py-1 uppercase tracking-wide text-[9px] relative cursor-default"
-              onMouseDown={(e) => e.stopPropagation()}
-            >
+            <div className="flex gap-6 px-3 py-2 uppercase tracking-wide text-[12px] relative cursor-default"
+              onMouseDown={(e) => e.stopPropagation()}>
               {Object.entries(menuItems).map(([menu, items]) => (
                 <div key={menu} className="relative">
                   <button
                     onClick={() =>
-                      setOpenMenu(openMenu === menu ? null : menu)
-                    }
-                    className="hover:text-blue-900 transition-colors"
-                  >
+                      setOpenMenu(openMenu === menu ? null : menu)}
+                    className="hover:text-blue-900 transition-colors">
                     {menu}
                   </button>
 
@@ -85,8 +131,7 @@ export default function VirtualClassroomPage() {
                       {items.map((item) => (
                         <button
                           key={item}
-                          className="block w-full px-3 py-2 text-left text-[9px] uppercase tracking-wide hover:bg-[#b8c3d1]"
-                        >
+                          className="block w-full px-3 py-2 text-left text-[9px] uppercase tracking-wide hover:bg-[#b8c3d1]">
                           {item}
                         </button>
                       ))}
@@ -109,11 +154,10 @@ export default function VirtualClassroomPage() {
                     <div className="flex items-center justify-between mb-6 uppercase text-[11px] tracking-[0.3em] text-zinc-100 font-semibold">
                       <span>React</span>
                       <span>Next.js</span>
-                      <span>Learning</span>
+                      <span>Vercel</span>
                     </div>
 
-                    <h1
-                      className="text-[#2cff66] uppercase leading-[0.85] font-black text-5xl sm:text-6xl md:text-7xl max-w-3xl"
+                    <h1 className="text-[#2cff66] uppercase leading-[0.85] font-black text-5xl sm:text-6xl md:text-7xl max-w-3xl"
                       style={{
                         fontFamily: "Impact, Haettenschweiler, Arial Narrow Bold, sans-serif",
                         textShadow: "0 0 12px rgba(44,255,102,0.35)",
@@ -146,38 +190,38 @@ export default function VirtualClassroomPage() {
             <aside className="border border-zinc-300/60 bg-gradient-to-b from-[#08131f] via-[#1a4bcf] to-[#06111b] p-6 flex flex-col justify-between text-zinc-100 min-h-full">
               <div>
                 <div className="mb-10">
-                  <p className="uppercase text-[10px] tracking-[0.25em] text-zinc-300 mb-3"> Presenters: </p>
+                  <p className="uppercase text-[10px] tracking-[0.25em] text-zinc-300 mb-3"> Name: </p>
                   <div className="space-y-6">
                     <div>
-                      <h2 className="text-[#39ff63] text-2xl uppercase font-black leading-none" style={{ fontFamily: "Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" }} > Nina Davis </h2>
-                      <p className="text-[9px] uppercase tracking-[0.15em] text-zinc-300 mt-2 leading-relaxed"> Educational Designer & Future Learning Strategist </p>
+                      <h2 className="text-[#39ff63] text-2xl uppercase font-black leading-none" style={{ fontFamily: "Impact, Haettenschweiler, Arial Narrow, sans-serif" }} > Troy Damon </h2>
+                      <p className="text-[9px] uppercase tracking-[0.15em] text-zinc-300 mt-2 leading-relaxed"> Fullstack Web Developer and Coder </p>
                     </div>
                     <div>
-                      <h2 className="text-[#39ff63] text-2xl uppercase font-black leading-none" style={{ fontFamily: "Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" }} > Carlos Vega </h2>
+                      <h2 className="text-[#39ff63] text-2xl uppercase font-black leading-none" style={{ fontFamily: "Impact, Haettenschweiler, Arial Narrow Bold, sans-serif" }} > Heading 2 </h2>
                       <p className="text-[9px] uppercase tracking-[0.15em] text-zinc-300 mt-2 leading-relaxed"> Hybrid Systems Researcher & Digital Educator </p>
                     </div>
                   </div>
                 </div>
-                <div className="space-y-6 text-[10px] uppercase tracking-[0.2em]">
-                  <div className="flex justify-between border-b border-zinc-500/20 pb-2">
-                    <span className="text-zinc-300">Date:</span>
-                    <div className="text-right text-[#39ff63] font-bold">
-                      <div>6 /</div>
-                      <div>27 /</div>
-                      <div>2026</div>
-                    </div>
-                  </div>
-                  <div className="flex justify-between border-b border-zinc-500/20 pb-2">
-                    <span className="text-zinc-300">Time:</span>
-                    <div className="text-right text-[#39ff63] font-bold">
-                      <div>2:00</div>
-                      <div>PM</div>
-                      <div>GMT</div>
-                    </div>
+
+                <div className="flex justify-between border-b border-zinc-500/20 pb-2">
+                  <span className="text-zinc-300">Date:</span>
+                  <div className="text-right text-[#39ff63] font-bold">
+                    <div>{day} /</div>
+                    <div>{month} /</div>
+                    <div>{year}</div>
                   </div>
                 </div>
+
+                <div className="flex justify-between border-b border-zinc-500/20 pb-2">
+                  <span className="text-zinc-300">Time:</span>
+                  <div className="text-right text-[#39ff63] font-bold">
+                    <div>{time}</div>
+                    <div className="text-[8px]">{timezone}</div>
+                  </div>
+                </div>
+
               </div>
-              <button className="mt-12 border border-[#39ff63] text-[#39ff63] hover:bg-[#39ff63] hover:text-black transition-all duration-200 uppercase tracking-[0.25em] text-xs py-3 font-bold"> Register </button>
+              <button className="mt-12 border border-[#39ff63] text-[#39ff63] hover:bg-[#39ff63] hover:text-black transition-all duration-200 uppercase tracking-[0.25em] text-xs py-3 font-bold"> My Apps </button>
             </aside>
           </div>
         </div>
