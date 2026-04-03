@@ -43,10 +43,10 @@ export default function VirtualClassroomPage() {
   }, []);
 
   const menuItems = {
-    File: ["New Session", "Open", "Save", "Export", "Exit"],
-    View: ["Zoom In", "Zoom Out", "Fullscreen", "Split View"],
-    Options: ["Preferences", "Themes", "Notifications", "Settings"],
-    Help: ["Documentation", "Support", "Report Issue", "About"],
+    "About Me": ["New Session", "Open", "Save", "Export", "Exit"],
+    Portfolio: ["Zoom In", "Zoom Out", "Fullscreen", "Split View"],
+    Resume: ["Preferences", "Themes", "Notifications", "Settings"],
+    Contact: ["Documentation", "Support", "Report Issue", "About"],
   };
 
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -115,14 +115,17 @@ export default function VirtualClassroomPage() {
               </button>
             </div>
 
-            <div className="flex gap-6 px-3 py-2 uppercase tracking-wide text-[12px] relative cursor-default"
+            <div className="flex items-stretch gap-2 px-3 uppercase tracking-wide text-[12px] relative cursor-default h-9"
               onMouseDown={(e) => e.stopPropagation()}>
               {Object.entries(menuItems).map(([menu, items]) => (
-                <div key={menu} className="relative">
+                <div
+                  key={menu}
+                  className="relative self-stretch flex"
+                >
                   <button
-                    onClick={() =>
-                      setOpenMenu(openMenu === menu ? null : menu)}
-                    className="hover:text-blue-900 transition-colors">
+                    onClick={() => setOpenMenu(openMenu === menu ? null : menu)}
+                    className="h-full px-3 flex items-center text-black transition-colors duration-150 hover:bg-[#8f9caf]/50 hover:text-white"
+                  >
                     {menu}
                   </button>
 
@@ -131,7 +134,8 @@ export default function VirtualClassroomPage() {
                       {items.map((item) => (
                         <button
                           key={item}
-                          className="block w-full px-3 py-2 text-left text-[9px] uppercase tracking-wide hover:bg-[#b8c3d1]">
+                          className="block w-full px-3 py-2 text-left text-[9px] uppercase tracking-wide hover:bg-[#b8c3d1]"
+                        >
                           {item}
                         </button>
                       ))}
@@ -161,8 +165,7 @@ export default function VirtualClassroomPage() {
                       style={{
                         fontFamily: "Impact, Haettenschweiler, Arial Narrow Bold, sans-serif",
                         textShadow: "0 0 12px rgba(44,255,102,0.35)",
-                      }}
-                    >
+                      }}>
                       Welcome
                       <br />
                       To My
