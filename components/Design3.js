@@ -106,12 +106,12 @@ export default function VirtualClassroomPage() {
                   </div>
                 </div>
 
-
               </div>
 
-              <button onMouseDown={(e) => e.stopPropagation()}
-                className="ml-4 h-[42px] w-[42px] shrink-0 border border-zinc-600 bg-[#d7dde6] hover:bg-[#c5ccd6] active:bg-[#aeb7c4] text-black text-sm font-bold flex items-center justify-center">
-                ×
+              <button
+                onMouseDown={(e) => e.stopPropagation()}
+                className="ml-4 h-[42px] w-[42px] shrink-0 hover:bg-[#ff4c4c] hover:border-[#ff4c4c] hover:text-white active:bg-[#cc3a3a] text-black text-lg font-bold flex items-center justify-center">
+                ✕
               </button>
             </div>
 
@@ -206,9 +206,7 @@ export default function VirtualClassroomPage() {
                 <div className="flex justify-between border-b border-zinc-500/20 pb-2">
                   <span className="text-zinc-300">Date:</span>
                   <div className="text-right text-[#39ff63] font-bold">
-                    <div>{day} /</div>
-                    <div>{month} /</div>
-                    <div>{year}</div>
+                    <div>{day} / {month} / {year}</div>
                   </div>
                 </div>
 
@@ -216,7 +214,12 @@ export default function VirtualClassroomPage() {
                   <span className="text-zinc-300">Time:</span>
                   <div className="text-right text-[#39ff63] font-bold">
                     <div>{time}</div>
-                    <div className="text-[8px]">{timezone}</div>
+                    <div className="text-[8px]">
+                      GMT {currentDateTime.getTimezoneOffset() <= 0 ? "+" : "-"}
+                      {String(Math.floor(Math.abs(currentDateTime.getTimezoneOffset()) / 60)).padStart(2, "0")}
+                      :
+                      {String(Math.abs(currentDateTime.getTimezoneOffset()) % 60).padStart(2, "0")} – {timezone}
+                    </div>
                   </div>
                 </div>
 
