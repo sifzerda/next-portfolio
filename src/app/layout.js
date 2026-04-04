@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Background from "../../components/Background";
+//import Background from "../../components/Background";
 import Nav from "../../components/Navigation";
 import Footer from "../../components/Footer";
 
@@ -21,22 +21,18 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-     <body className="min-h-full flex flex-col">
-        <div className="relative min-h-screen w-full">
-          <Nav />
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+      <body className={`min-h-screen bg-[#06111b]
+  bg-[radial-gradient(circle_at_top_left,_rgba(26,75,207,1),_transparent_30%)]
+  bg-no-repeat bg-cover bg-fixed overflow-x-hidden
+`}>
 
-          {/* Background page content */}
-          {children}
+        <Nav />
+        {/* Main content */}
+        <main className="flex-grow">{children}</main>
 
-          {/* Global draggable window  */}
-          <Background />
+        <Footer />
 
-          <Footer />
-        </div>
       </body>
     </html>
   );

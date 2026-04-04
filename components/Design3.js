@@ -66,7 +66,7 @@ export default function VirtualClassroomPage() {
     : { nodeRef, handle: ".drag-handle", bounds: "parent", position, onDrag: (_, data) => setPosition({ x: data.x, y: data.y }) };
 
   return (
-    <div className="w-screen h-screen bg-black flex items-center justify-center p-4 overflow-hidden">
+    <div className="w-screen h-screen flex items-center justify-center p-4 overflow-hidden">
       <Draggable {...draggableProps} nodeRef={nodeRef}>
         <div
           ref={nodeRef}
