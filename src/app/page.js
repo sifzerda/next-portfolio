@@ -2,6 +2,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 import { useState, useEffect } from "react";
 
@@ -66,9 +67,16 @@ export default function VirtualClassroomPage() {
                   </h1>
                 </div>
 
-                <div className="w-40 h-48 border border-zinc-300/60 bg-black/30 flex items-center justify-center text-zinc-400 text-[10px] uppercase tracking-[0.25em] shrink-0">
-                  Photo
+                <div className="w-40 h-48 border border-zinc-300/60 bg-black/30 shrink-0 relative overflow-hidden">
+                  <Image
+                    src="/profilepic.png"
+                    alt="Troy Damon"
+                    fill
+                    sizes="160px"
+                    className="object-cover object-top"
+                  />
                 </div>
+                
               </div>
 
               <div className="mt-12 flex flex-col gap-2 max-w-md">
