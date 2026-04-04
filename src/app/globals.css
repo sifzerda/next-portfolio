@@ -27,6 +27,7 @@ body {
 
 /* custom styling ----------------------------*/
 
+
 .marquee-wrapper {
   overflow: hidden;
   width: 100%;
@@ -48,3 +49,5 @@ body {
     transform: translateX(-50%);
   }
 }
+
+ 
