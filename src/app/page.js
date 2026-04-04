@@ -73,10 +73,9 @@ export default function VirtualClassroomPage() {
                     alt="Troy Damon"
                     fill
                     sizes="160px"
-                    className="object-cover object-top"
-                  />
+                    className="object-cover object-top" />
                 </div>
-                
+
               </div>
 
               <div className="mt-12 flex flex-col gap-2 max-w-md">
