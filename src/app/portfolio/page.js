@@ -56,17 +56,10 @@ export default function PortfolioPage() {
                       fontFamily: "Impact, Haettenschweiler, Arial Narrow Bold, sans-serif",
                       textShadow: "0 0 12px rgba(44,255,102,0.35)",
                     }}>
-                      Welcome
-                      <br />
-                      To My
-                      <br />
-                      Portfolio
+                      My Projects
                     </h1>
                   </div>
 
-                  <div className="w-40 h-48 border border-zinc-300/60 bg-black/30 flex items-center justify-center text-zinc-400 text-[10px] uppercase tracking-[0.25em] shrink-0">
-                    Photo
-                  </div>
                 </div>
 
                 <div className="mt-12 flex flex-col gap-2 max-w-md">
@@ -142,6 +135,7 @@ export default function PortfolioPage() {
               </div>
 
               <button className="mt-12 border border-[#39ff63] text-[#39ff63] hover:bg-[#39ff63] hover:text-black transition-all duration-200 uppercase tracking-[0.25em] text-xs py-3 font-bold">My Apps</button>
+
             </aside>
 
           </div>
