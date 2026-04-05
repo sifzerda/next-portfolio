@@ -29,7 +29,7 @@ export default function ResumePage() {
 
   return (
     <div className="w-full flex flex-col items-center justify-center p-4 pb-[120px]">
-<div className="
+      <div className="
   border border-zinc-300
   bg-[radial-gradient(circle_at_top_left,_rgba(26,75,207,1),_transparent_60%)]
   rounded-sm
