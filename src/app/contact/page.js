@@ -65,7 +65,6 @@ export default function PortfolioPage() {
               <div className="mt-12 flex flex-col gap-2 max-w-md">
                 <div className="flex gap-3">
 
-
                   <div className="inline-block border border-zinc-300/60 bg-black/25 p-5">
                     <form className="space-y-5">
                       <div className="grid sm:grid-cols-2 gap-5">
@@ -121,23 +120,6 @@ export default function PortfolioPage() {
                   </div>
 
                 </div>
-
-                <div className="flex gap-3">
-                  <div className="pt-1 text-zinc-200 text-xl">▶</div>
-                  <p className="text-[11px] sm:text-xs uppercase leading-relaxed tracking-[0.15em] text-zinc-200">
-                    Creativity, attention to detail, and passion for learning
-                  </p>
-                </div>
-
-                <div className="flex gap-3">
-                  <div className="pt-1 text-zinc-200 text-xl">▶</div>
-                  <p className="text-[11px] sm:text-xs uppercase leading-relaxed tracking-[0.15em] text-zinc-200">
-                    Eager to contribute to innovative projects and collaborate with talented teams
-                  </p>
-                </div>
-
-
-
 
               </div>
 
@@ -195,7 +177,6 @@ export default function PortfolioPage() {
           </aside>
 
         </div>
-
 
       </div>
     </div>

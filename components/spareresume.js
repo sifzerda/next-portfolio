@@ -1,7 +1,6 @@
 // resume/page.js
 "use client";
 
-import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export default function ResumePage() {
@@ -44,12 +43,28 @@ export default function ResumePage() {
 
               <h1 className="text-[#2cff66] uppercase leading-[0.85] font-black text-5xl sm:text-6xl md:text-7xl"
                 style={{fontFamily:"Impact, Haettenschweiler, Arial Narrow Bold, sans-serif", textShadow: "0 0 12px rgba(44,255,102,0.35)",}}>
-                My Resume
+                My
+                <br />
+                Resume
               </h1>
+
+              {/* Profile */}
+              <section className="mt-12 border-t border-zinc-300/20 pt-6">
+                <h2 className="text-[#39ff63] text-lg uppercase tracking-[0.25em] font-bold mb-4">
+                  Profile
+                </h2>
+
+                <p className="text-[11px] sm:text-xs uppercase leading-relaxed tracking-[0.12em] text-zinc-200 max-w-3xl">
+                  Fullstack web developer with experience in React, Next.js,
+                  Tailwind CSS, Prisma, authentication systems, and responsive
+                  UI design. Passionate about building polished, user-focused
+                  applications with strong attention to detail.
+                </p>
+              </section>
 
               {/* Skills */}
               <section className="mt-12 border-t border-zinc-300/20 pt-6">
-                <h2 className="text-[#39ff63] text-sm uppercase tracking-[0.25em] font-bold mb-6">
+                <h2 className="text-[#39ff63] text-lg uppercase tracking-[0.25em] font-bold mb-6">
                   Skills
                 </h2>
 
@@ -59,7 +74,7 @@ export default function ResumePage() {
                       Frontend
                     </p>
                     <p className="text-[11px] uppercase tracking-[0.12em] text-zinc-200 leading-relaxed">
-                      HTML, CSS, JavaScript, TypeScript, jQuery, React, Next.js, React, Next.js, Tailwind, Bootstrap, Handlebars, SEO
+                      React, Next.js, Tailwind CSS, HTML, CSS, JavaScript
                     </p>
                   </div>
 
@@ -68,16 +83,16 @@ export default function ResumePage() {
                       Backend
                     </p>
                     <p className="text-[11px] uppercase tracking-[0.12em] text-zinc-200 leading-relaxed">
-                      Node.js, APIs, Express, MySQL (Sequelize), GraphQL, MongoDB, REST, CRUD, Prisma, PostgreDB, JWT, Authentication, PWAs, Jest Testing, Context API, Redux
+                      Node.js, Prisma, MongoDB, PostgreSQL, JWT, Authentication
                     </p>
                   </div>
 
                   <div className="border border-zinc-300/20 p-4 bg-black/20">
                     <p className="text-[10px] uppercase tracking-[0.25em] text-zinc-400 mb-2">
-                      Other Tools
+                      Tools
                     </p>
                     <p className="text-[11px] uppercase tracking-[0.12em] text-zinc-200 leading-relaxed">
-                      GitHub, Heroku, Vercel, Netlify, Render, Postman, Microsoft Azure Cloud, Serverless Architecture
+                      Git, GitHub, Vercel, VS Code, Postman
                     </p>
                   </div>
 
@@ -93,9 +108,46 @@ export default function ResumePage() {
                 </div>
               </section>
 
+              {/* Experience */}
+              <section className="mt-12 border-t border-zinc-300/20 pt-6">
+                <h2 className="text-[#39ff63] text-lg uppercase tracking-[0.25em] font-bold mb-6">
+                  Experience
+                </h2>
+
+                <div className="space-y-6">
+                  <div className="border-l-2 border-[#39ff63] pl-4">
+                    <p className="text-[10px] uppercase tracking-[0.25em] text-zinc-400">
+                      2024 - Present
+                    </p>
+                    <h3 className="text-zinc-100 uppercase font-bold text-sm mt-2">
+                      Freelance Developer
+                    </h3>
+                    <p className="text-[11px] uppercase tracking-[0.12em] text-zinc-300 mt-2 leading-relaxed">
+                      Designing and building portfolio websites, landing pages,
+                      and custom UI projects using React, Next.js, and Tailwind
+                      CSS.
+                    </p>
+                  </div>
+
+                  <div className="border-l-2 border-[#39ff63] pl-4">
+                    <p className="text-[10px] uppercase tracking-[0.25em] text-zinc-400">
+                      2023 - 2024
+                    </p>
+                    <h3 className="text-zinc-100 uppercase font-bold text-sm mt-2">
+                      Monash Coding Bootcamp
+                    </h3>
+                    <p className="text-[11px] uppercase tracking-[0.12em] text-zinc-300 mt-2 leading-relaxed">
+                      Completed an intensive fullstack development bootcamp
+                      focused on frontend, backend, databases, deployment, and
+                      collaborative projects.
+                    </p>
+                  </div>
+                </div>
+              </section>
+
               {/* Education */}
               <section className="mt-12 border-t border-zinc-300/20 pt-6">
-                <h2 className="text-[#39ff63] text-sm uppercase tracking-[0.25em] font-bold mb-6">
+                <h2 className="text-[#39ff63] text-lg uppercase tracking-[0.25em] font-bold mb-6">
                   Education
                 </h2>
 
@@ -179,13 +231,9 @@ export default function ResumePage() {
               </div>
             </div>
 
-            <Link href="/portfolio" className="mt-12 border border-[#39ff63] text-[#39ff63] 
-            hover:bg-[#39ff63] hover:text-black active:bg-[#2ecc58] active:text-black active:translate-y-[1px] 
-            transition-all duration-150 uppercase tracking-[0.25em] text-xs py-3 font-bold inline-flex items-center 
-            justify-center select-none">
-              My Apps
-            </Link>
-
+            <button className="mt-12 border border-[#39ff63] text-[#39ff63] hover:bg-[#39ff63] hover:text-black active:bg-[#2ecc58] active:text-black active:translate-y-[1px] transition-all duration-150 uppercase tracking-[0.25em] text-xs py-3 font-bold">
+              Download Resume
+            </button>
           </aside>
         </div>
       </div>
