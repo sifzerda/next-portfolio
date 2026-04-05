@@ -1,6 +1,7 @@
 // resume/page.js
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export default function ResumePage() {
@@ -43,9 +44,7 @@ export default function ResumePage() {
 
               <h1 className="text-[#2cff66] uppercase leading-[0.85] font-black text-5xl sm:text-6xl md:text-7xl"
                 style={{fontFamily:"Impact, Haettenschweiler, Arial Narrow Bold, sans-serif", textShadow: "0 0 12px rgba(44,255,102,0.35)",}}>
-                My
-                <br />
-                Resume
+                My Resume
               </h1>
 
               {/* Profile */}
@@ -231,9 +230,13 @@ export default function ResumePage() {
               </div>
             </div>
 
-            <button className="mt-12 border border-[#39ff63] text-[#39ff63] hover:bg-[#39ff63] hover:text-black active:bg-[#2ecc58] active:text-black active:translate-y-[1px] transition-all duration-150 uppercase tracking-[0.25em] text-xs py-3 font-bold">
-              Download Resume
-            </button>
+            <Link href="/portfolio" className="mt-12 border border-[#39ff63] text-[#39ff63] 
+            hover:bg-[#39ff63] hover:text-black active:bg-[#2ecc58] active:text-black active:translate-y-[1px] 
+            transition-all duration-150 uppercase tracking-[0.25em] text-xs py-3 font-bold inline-flex items-center 
+            justify-center select-none">
+              My Apps
+            </Link>
+
           </aside>
         </div>
       </div>
