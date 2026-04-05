@@ -3,10 +3,36 @@
 
 import { useState, useEffect } from "react";
 
-export default function PortfolioPage() {
+export default function ContactPage() {
 
-  // date time logic
+  const [result, setResult] = useState("");
+  const [submitted, setSubmitted] = useState(false);
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "708713b1-69b5-418e-90fc-b7a87b692e53");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      setSubmitted(true);
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+      setResult("There was an error submitting your message");
+    }
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -66,37 +92,56 @@ export default function PortfolioPage() {
                 <div className="flex gap-3">
 
                   <div className="inline-block border border-zinc-300/60 bg-black/25 p-5">
-                    <form className="space-y-5">
-                      <div className="grid sm:grid-cols-2 gap-5">
-                        <div className="flex flex-col gap-2 w-[400px]">
-                          <label className="text-[10px] uppercase tracking-[0.25em] text-zinc-300">
-                            Name
-                          </label>
-                          <input type="text" placeholder="Your name or reference" className="w-full bg-[#08131f] border border-zinc-500/40 text-zinc-100 px-4 py-3 uppercase text-xs tracking-[0.12em] outline-none focus:border-[#39ff63] focus:shadow-[0_0_12px_rgba(57,255,99,0.25)] transition-all" />
-                        </div>
-                      </div>
 
-                      <div className="grid sm:grid-cols-2 gap-5">
-                        <div className="flex flex-col gap-2 w-[400px]">
-                          <label className="text-[10px] uppercase tracking-[0.25em] text-zinc-300">
-                            Email
-                          </label>
-                          <input type="email" placeholder="example@email.com" className="w-full bg-[#08131f] border border-zinc-500/40 text-zinc-100 px-4 py-3 uppercase text-xs tracking-[0.12em] outline-none focus:border-[#39ff63] focus:shadow-[0_0_12px_rgba(57,255,99,0.25)] transition-all" />
-                        </div>
-                      </div>
 
-                      <div className="grid sm:grid-cols-2 gap-5">
-                        <div className="flex flex-col gap-2 w-[400px]">
-                          <label className="text-[10px] uppercase tracking-[0.25em] text-zinc-300">
-                            Message
-                          </label>
-                          <input type="email" placeholder="Write your message here..." className="w-full bg-[#08131f] border border-zinc-500/40 text-zinc-100 px-4 py-3 uppercase text-xs tracking-[0.12em] outline-none focus:border-[#39ff63] focus:shadow-[0_0_12px_rgba(57,255,99,0.25)] transition-all" />
-                        </div>
+                    {submitted ? (
+                      <div className="confirmation-message">
+                        <p>Thank you for your message!</p>
                       </div>
+                    ) : (
+                      <div>
+                        {result === "Form Submitted Successfully" ? (
+                          <div className="success-message">
+                            <p>{result}</p>
+                          </div>
+                        ) : result === "Sending...." ? (
+                          <div className="sending-message">
+                            <p>{result}</p>
+                          </div>
+                        ) : (
 
-                      <button
-                        type="submit"
-                        className="
+
+                          <form onSubmit={onSubmit} className="space-y-5">
+                            <div className="grid sm:grid-cols-2 gap-5">
+                              <div className="flex flex-col gap-2 w-[400px]">
+                                <label className="text-[10px] uppercase tracking-[0.25em] text-zinc-300">
+                                  Name
+                                </label>
+                                <input type="text" placeholder="Your name or reference" className="w-full bg-[#08131f] border border-zinc-500/40 text-zinc-100 px-4 py-3 uppercase text-xs tracking-[0.12em] outline-none focus:border-[#39ff63] focus:shadow-[0_0_12px_rgba(57,255,99,0.25)] transition-all" required />
+                              </div>
+                            </div>
+
+                            <div className="grid sm:grid-cols-2 gap-5">
+                              <div className="flex flex-col gap-2 w-[400px]">
+                                <label className="text-[10px] uppercase tracking-[0.25em] text-zinc-300">
+                                  Email
+                                </label>
+                                <input type="email" placeholder="example@email.com" className="w-full bg-[#08131f] border border-zinc-500/40 text-zinc-100 px-4 py-3 uppercase text-xs tracking-[0.12em] outline-none focus:border-[#39ff63] focus:shadow-[0_0_12px_rgba(57,255,99,0.25)] transition-all" required />
+                              </div>
+                            </div>
+
+                            <div className="grid sm:grid-cols-2 gap-5">
+                              <div className="flex flex-col gap-2 w-[400px]">
+                                <label className="text-[10px] uppercase tracking-[0.25em] text-zinc-300">
+                                  Message
+                                </label>
+                                <input type="text" placeholder="Write your message here..." className="w-full bg-[#08131f] border border-zinc-500/40 text-zinc-100 px-4 py-3 uppercase text-xs tracking-[0.12em] outline-none focus:border-[#39ff63] focus:shadow-[0_0_12px_rgba(57,255,99,0.25)] transition-all" required />
+                              </div>
+                            </div>
+
+                            <button
+                              type="submit"
+                              className="
                         w-full sm:w-auto
                         border border-[#39ff63]
                         text-[#39ff63]
@@ -112,15 +157,17 @@ export default function PortfolioPage() {
                         font-bold
                         inline-flex items-center justify-center
                         select-none
+                        cursor-pointer
                       ">
-                        Send Message
-                      </button>
+                              Send Message
+                            </button>
 
-                    </form>
+                          </form>
+                        )}
+                      </div>
+                    )}
                   </div>
-
                 </div>
-
               </div>
 
             </div>
@@ -172,7 +219,7 @@ export default function PortfolioPage() {
 
             </div>
 
-            <button className="mt-12 border border-[#39ff63] text-[#39ff63] hover:bg-[#39ff63] hover:text-black transition-all duration-200 uppercase tracking-[0.25em] text-xs py-3 font-bold">My Apps</button>
+            <button className="mt-12 border border-[#39ff63] text-[#39ff63] hover:bg-[#39ff63] hover:text-black transition-all duration-200 uppercase tracking-[0.25em] text-xs py-3 font-bold cursor-pointer">My Apps</button>
 
           </aside>
 
