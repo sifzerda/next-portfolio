@@ -73,7 +73,7 @@ export default function PortfolioPage() {
                           <label className="text-[10px] uppercase tracking-[0.25em] text-zinc-300">
                             Name
                           </label>
-                          <input type="text" placeholder="John" className="w-full bg-[#08131f] border border-zinc-500/40 text-zinc-100 px-4 py-3 uppercase text-xs tracking-[0.12em] outline-none focus:border-[#39ff63] focus:shadow-[0_0_12px_rgba(57,255,99,0.25)] transition-all" />
+                          <input type="text" placeholder="Your name or reference" className="w-full bg-[#08131f] border border-zinc-500/40 text-zinc-100 px-4 py-3 uppercase text-xs tracking-[0.12em] outline-none focus:border-[#39ff63] focus:shadow-[0_0_12px_rgba(57,255,99,0.25)] transition-all" />
                         </div>
                       </div>
 
@@ -91,7 +91,7 @@ export default function PortfolioPage() {
                           <label className="text-[10px] uppercase tracking-[0.25em] text-zinc-300">
                             Message
                           </label>
-                          <input type="email" placeholder="example@email.com" className="w-full bg-[#08131f] border border-zinc-500/40 text-zinc-100 px-4 py-3 uppercase text-xs tracking-[0.12em] outline-none focus:border-[#39ff63] focus:shadow-[0_0_12px_rgba(57,255,99,0.25)] transition-all" />
+                          <input type="email" placeholder="Write your message here..." className="w-full bg-[#08131f] border border-zinc-500/40 text-zinc-100 px-4 py-3 uppercase text-xs tracking-[0.12em] outline-none focus:border-[#39ff63] focus:shadow-[0_0_12px_rgba(57,255,99,0.25)] transition-all" />
                         </div>
                       </div>
 
