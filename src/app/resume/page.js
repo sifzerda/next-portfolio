@@ -55,6 +55,26 @@ export default function ResumePage() {
                 My Resume
               </h1>
 
+                            {/* Education */}
+              <section className="mt-12 border-t border-zinc-300/20 pt-6">
+                <h2 className="text-[#39ff63] text-sm uppercase tracking-[0.25em] font-bold mb-6">
+                  Education
+                </h2>
+
+                <div className="border border-zinc-300/20 p-4 bg-black/20">
+                  <p className="text-[10px] uppercase tracking-[0.25em] text-zinc-400">
+                    Monash University 2025
+                  </p>
+                  <h3 className="text-zinc-100 uppercase font-bold text-sm mt-2">
+                    Fullstack Coding Bootcamp Graduate
+                  </h3>
+                  <p className="text-[11px] tracking-[0.12em] text-zinc-300 mt-2">
+                    Completed training in frontend and backend web development,
+                    including React, Node.js, databases, and deployment.
+                  </p>
+                </div>
+              </section>
+
               {/* Skills */}
               <section className="mt-12 border-t border-zinc-300/20 pt-6 max-w-md">
                 <h2 className="text-[#39ff63] text-sm uppercase tracking-[0.25em] font-bold mb-6">
@@ -101,25 +121,6 @@ export default function ResumePage() {
                 </div>
               </section>
 
-              {/* Education */}
-              <section className="mt-12 border-t border-zinc-300/20 pt-6">
-                <h2 className="text-[#39ff63] text-sm uppercase tracking-[0.25em] font-bold mb-6">
-                  Education
-                </h2>
-
-                <div className="border border-zinc-300/20 p-4 bg-black/20">
-                  <p className="text-[10px] uppercase tracking-[0.25em] text-zinc-400">
-                    Monash University 2025
-                  </p>
-                  <h3 className="text-zinc-100 uppercase font-bold text-sm mt-2">
-                    Fullstack Coding Bootcamp Graduate
-                  </h3>
-                  <p className="text-[11px] tracking-[0.12em] text-zinc-300 mt-2">
-                    Completed training in frontend and backend web development,
-                    including React, Node.js, databases, and deployment.
-                  </p>
-                </div>
-              </section>
             </div>
           </div>
 
@@ -179,9 +180,13 @@ export default function ResumePage() {
 
                   <div className="space-y-3 text-[10px] uppercase tracking-[0.15em] text-zinc-200">
                     <p>Email: your@email.com</p>
-                    <p>Phone: 0400 000 000</p>
+                    <p>Phone: 0000 000 000</p>
                     <p>Location: Melbourne, Australia</p>
-                    <p>GitHub: github.com/yourname</p>
+                    <p>GitHub:
+                      <Link href="https://github.com/sifzerda" className="bg-black text-[#39ff63] 
+                       hover:bg-[#39ff63] hover:text-black">
+                        Sifzerda
+                      </Link></p>
                   </div>
                 </div>
               </div>
