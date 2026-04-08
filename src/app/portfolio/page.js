@@ -98,9 +98,9 @@ export default function PortfolioPage() {
     },
     {
       title: "MVC Tech Blog",
-      description: "This is a tech-themed blog with user authentication. It uses Javascript and Handlebars and runs on an Express server, using Sequelize models and a MySQL database. This app was deployed on Heroku, then refactored into a serverless Next.js app deployed on Vercel.",
+      description: "This is a tech-themed blog with user authentication. It originally had a Handlebars GUI and ran on an Express server, using Sequelize models and a MySQL database. This app was deployed on Heroku, then refactored into a serverless Next.js app connected to a Postgres-Neon database, deployed on Vercel.",
       image: "/techblog.jpg",
-      link: "https://next-tech-blog-itu1aqld6-sifzerdas-projects.vercel.app/",
+      link: "https://nx-tech-blog.vercel.app/",
       tech: ["Handlebars", "Express", "Javascript"],
     },
     {
