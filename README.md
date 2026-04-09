@@ -16,7 +16,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## 1. Description
 
-This is my personal portfolio site. It's a re-styled upgrade to my portfolio in react-challenge, runs serverless using Next.js.
+This is my personal portfolio site. It's a re-styled upgrade to my portfolio in react-challenge. It runs serverless using Next.js, and the contact form uses the web3forms API to send visitor messages to my email.
 
 ## 2. Badges
 
@@ -41,17 +41,17 @@ This is my personal portfolio site. It's a re-styled upgrade to my portfolio in 
 
 This app has been deployed to Vercel:
 
-[App deployed on Vercel](https://next-portfolio.vercel.app/)
+[Visit this site](https://next-portfolio-sifzerdas-projects.vercel.app/)
 
-Screenshot
+Screenshots:
 
-![image](https://github.com/sifzerda/Tech-Blog/assets/139626561/83208607-f29b-4ef8-a038-41ba0814ef53)
+![image](https://github.com/user-attachments/assets/915fb532-5121-4b2a-8f46-567ee12811fb)
 
-![image](https://github.com/sifzerda/Tech-Blog/assets/139626561/a41b3995-3bea-4fe2-8e23-9ae4792f684e)
+![image](https://github.com/user-attachments/assets/06285331-0563-4f95-9a0f-4fe2c7f0042b)
 
-![image](https://github.com/sifzerda/Tech-Blog/assets/139626561/cfcf8da9-ebb6-4d31-bff6-50b334a55580)
+![image](https://github.com/user-attachments/assets/8a21ec62-ead6-4b65-80f3-5aa5fa001daf)
 
-![image](https://github.com/sifzerda/Tech-Blog/assets/139626561/d9bdb58f-a68b-40de-b52b-ad8ccc74ece8)
+![image](https://github.com/user-attachments/assets/946ca444-992c-4bca-9f6b-2be129c29808)
 
 ## 4. Installation
 
