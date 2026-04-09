@@ -62,7 +62,7 @@ Screenshot
 
 ## 5. Support
 
-For support, users can contact me through the on-site contact form. Links to my github and the app repo are also in the footer of the blog.
+For support, users can contact me through the on-site contact form,, which is connected with web3forms API, to my hotmail. Links to my github and the app repo are also in the footer of the blog.
 
 ## 6. Contributing
 
