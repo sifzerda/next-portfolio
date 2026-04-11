@@ -30,6 +30,7 @@ export default function RootLayout({ children }) {
 `}>
 
         <Nav />
+        
         {/* Main content */}
         <main className="flex-grow">{children}</main>
 

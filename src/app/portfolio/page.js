@@ -26,13 +26,13 @@ export default function PortfolioPage() {
 
   // Apps array
   const apps = [
-    {
-      title: 'Band Page',
-      description: "Made for my band to arrange jams and suggest songs. A fullstack app built with React, node, express, MongoDB, and graphql - refactored into a serverless Next app. Rehearsal availability calendar, music player, youtube audio search.",
-      image: "/bandpic.jpg",
-      link: "https://bandpage.vercel.app/",
-      tech: ["React", "react-player", "YouTube Data API v3"],
-    },
+//    {
+//      title: 'Band Page',
+//      description: "Made for my band to arrange jams and suggest songs. A fullstack app built with React, node, express, MongoDB, and graphql - refactored into a serverless Next app. Rehearsal availability calendar, music player, youtube audio search.",
+//      image: "/bandpic.jpg",
+//      link: "https://bandpage.vercel.app/",
+//      tech: ["React", "react-player", "YouTube Data API v3"],
+//    },
     {
       title: "Game of Life",
       description: "Plays out simulations of Game of Life (John Conway). A frontend app built with React, and node. Play/pause/reset timed simulation, alter group size and quantity.",
