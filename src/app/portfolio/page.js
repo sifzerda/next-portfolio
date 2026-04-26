@@ -24,15 +24,14 @@ export default function PortfolioPage() {
 
   const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-  // Apps array
   const apps = [
-//    {
-//      title: 'Band Page',
-//      description: "Made for my band to arrange jams and suggest songs. A fullstack app built with React, node, express, MongoDB, and graphql - refactored into a serverless Next app. Rehearsal availability calendar, music player, youtube audio search.",
-//      image: "/bandpic.jpg",
-//      link: "https://bandpage.vercel.app/",
-//      tech: ["React", "react-player", "YouTube Data API v3"],
-//    },
+    //    {
+    //      title: "Band Page",
+    //      description: "Made for my band to arrange jams and suggest songs. A fullstack app built with React, node, express, MongoDB, and graphql - refactored into a serverless Next app. Rehearsal availability calendar, music player, youtube audio search.",
+    //      image: "/bandpic.jpg",
+    //      link: "https://bandpage.vercel.app/",
+    //      tech: ["React", "react-player", "YouTube Data API v3"],
+    //    },
     {
       title: "Game of Life",
       description: "Plays out simulations of John Conway's Game of Life. Frontend React + Node.js. Play/pause/reset timed simulation, alter group size and quantity.",
@@ -71,7 +70,7 @@ export default function PortfolioPage() {
     {
       title: "Minesweeper",
       description: "A frontend game of Minesweeper in Next.js. Originally fullstack, with React + Express + MongoDB + graphQL. Then refactored into a serverless Next app.",
-      image: "/mine.jpg",
+      image: "/mine2.png",
       link: "https://nx-minesweeper.vercel.app/",
       tech: ["Next.js", "Vercel", "Tailwind"],
     },
@@ -137,87 +136,100 @@ export default function PortfolioPage() {
     <div className="w-full flex flex-col items-center justify-center p-4 pb-[120px]">
       <div className="border border-zinc-300 bg-[radial-gradient(circle_at_top_left,_rgba(26,75,207,1),_transparent_60%)] rounded-sm cursor-default w-full max-w-7xl">
 
-        {/* Main Content */}
-        <div className="grid md:grid-cols-[1fr_280px] min-h-[600px] md:min-h-0">
-          {/* Left Section */}
+        <div className="grid md:grid-cols-[1fr_280px]">
+          {/* LEFT */}
           <div className="relative border-r border-zinc-300/60 p-6 md:p-8">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(70,140,255,0.15),_transparent_55%)] pointer-events-none" />
-            <div className="relative z-10 flex flex-col gap-12">
 
-              {/* Header */}
+            <div className="relative z-10 flex flex-col gap-12">
+              {/* HEADER */}
               <div>
-                <div className="flex items-center justify-between mb-6 uppercase text-[11px] tracking-[0.3em] text-zinc-100 font-semibold">
+                <div className="flex justify-between mb-6 uppercase text-[11px] tracking-[0.3em] text-zinc-100 font-semibold">
                   <span>React</span>
                   <span>Next.js</span>
                   <span>Vercel</span>
                 </div>
 
-                <h1 className="text-[#2cff66] uppercase leading-[0.85] font-black text-5xl sm:text-6xl md:text-7xl max-w-3xl"
-                  style={{ fontFamily: "Impact, Haettenschweiler, Arial Narrow Bold, sans-serif", textShadow: "0 0 12px rgba(44,255,102,0.35)" }}>
+                <h1 className="text-[#2cff66] uppercase font-black text-5xl sm:text-6xl md:text-7xl"
+                  style={{ fontFamily: "Impact, sans-serif", textShadow: "0 0 12px rgba(44,255,102,0.35)" }}>
                   My Projects
                 </h1>
               </div>
 
-              {/* App Cards */}
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-2">
+              {/* GRID */}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {apps.map((app, idx) => (
-                  <div key={idx} className="border-2 border-transparent bg-[#0b1522] rounded-md p-4 flex flex-col transition-all duration-200 hover:border-[#39ff63] hover:brightness-75">
-                    <img src={app.image} alt={app.title} className="w-full h-40 object-cover rounded-md mb-4 border border-zinc-300 p-[2px] bg-black transition-all duration-200 hover:border-[#39ff63] hover:brightness-50" />
-                    <h3 className="text-[#39ff63] font-bold text-lg uppercase mb-2 transition-all duration-200 hover:text-zinc-400">{app.title}</h3>
-                    <p className="text-zinc-200 text-sm mb-4 transition-all duration-200 hover:text-zinc-500">{app.description}</p>
-                    <div className="flex flex-wrap gap-1 mb-4">{app.tech.map((tech, i) => (<span key={i} className="text-[9px] uppercase text-zinc-400 border border-zinc-500 px-2 py-1 rounded transition-all duration-200 hover:text-zinc-500 hover:border-zinc-500/70">{tech}</span>))}</div>
+                  <div key={idx} className="bg-[#0b1522] rounded-md p-4 flex flex-col border hover:border-[#39ff63] hover:brightness-75 transition">
 
-                    <a href={app.link}
+                    {/* ✅ SQUARE IMAGE */}
+                    <div className="w-full aspect-square bg-black rounded-md mb-4 border border-zinc-300 p-[2px] flex items-center justify-center overflow-hidden">
+                      <img
+                        src={app.image}
+                        alt={app.title}
+                        className="w-full h-full object-contain transition duration-200 hover:brightness-50"
+                      />
+                    </div>
+
+                    <h3 className="text-[#39ff63] font-bold text-lg uppercase mb-2">
+                      {app.title}
+                    </h3>
+
+                    <p className="text-zinc-200 text-sm mb-4">
+                      {app.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-1 mb-4">
+                      {app.tech.map((tech, i) => (
+                        <span key={i} className="text-[9px] uppercase text-zinc-400 border border-zinc-500 px-2 py-1 rounded">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    <a
+                      href={app.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-auto text-xs uppercase font-bold border border-[#39ff63] text-[#39ff63] py-2 text-center rounded hover:bg-[#39ff63] hover:text-black transition-all duration-200">
+                      className="mt-auto text-xs uppercase font-bold border border-[#39ff63] text-[#39ff63] py-2 text-center rounded hover:bg-[#39ff63] hover:text-black transition"
+                    >
                       Launch
                     </a>
 
                   </div>
                 ))}
               </div>
-
             </div>
           </div>
 
-          {/* Right Aside */}
-          <aside className="border border-zinc-300/60 bg-gradient-to-b from-[#08131f] via-[#1a4bcf] to-[#06111b] p-6 flex flex-col justify-between text-zinc-100 min-h-full">
+          {/* RIGHT */}
+          <aside className="border border-zinc-300/60 bg-gradient-to-b from-[#08131f] via-[#1a4bcf] to-[#06111b] p-6 flex flex-col justify-between text-zinc-100">
 
-            {/* Date & Time */}
             <div className="flex flex-col gap-4">
-              <div className="flex flex-col gap-1 bg-[#0b1522] border border-zinc-500/30 rounded-sm px-3 py-2 text-[10px] uppercase tracking-[0.25em] w-full">
-                <div className="flex justify-between items-center w-full">
-                  <span className="text-zinc-400">Date</span>
-                  <span className="text-[#39ff63] font-bold">{day.toString().padStart(2, "0")} / {month.toString().padStart(2, "0")} / {year}</span>
+              <div className="bg-[#0b1522] border border-zinc-500/30 px-3 py-2 text-[10px] uppercase">
+                <div className="flex justify-between">
+                  <span>Date</span>
+                  <span className="text-[#39ff63]">{day}/{month}/{year}</span>
                 </div>
-                <div className="flex justify-between items-center w-full">
-                  <span className="text-zinc-400">Time</span>
-                  <span className="text-[#39ff63] font-bold">{time}</span>
-                </div>
-                <div className="text-right text-white text-[8px] w-full break-words">
-                  GMT {currentDateTime.getTimezoneOffset() <= 0 ? "+" : "-"}
-                  {String(Math.floor(Math.abs(currentDateTime.getTimezoneOffset()) / 60)).padStart(2, "0")}:
-                  {String(Math.abs(currentDateTime.getTimezoneOffset()) % 60).padStart(2, "0")} – {timezone}
+                <div className="flex justify-between">
+                  <span>Time</span>
+                  <span className="text-[#39ff63]">{time}</span>
                 </div>
               </div>
 
-              {/* Name Section */}
               <div>
-                <p className="uppercase text-[10px] tracking-[0.25em] text-zinc-300 mb-3">Name:</p>
-                <h2 className="text-[#39ff63] text-2xl uppercase font-black leading-none">Troy Damon</h2>
-                <p className="text-[9px] uppercase tracking-[0.15em] text-zinc-300 mt-2 leading-relaxed">Fullstack Web Developer and Coder</p>
+                <p className="text-[10px] uppercase text-zinc-300 mb-2">Name:</p>
+                <h2 className="text-[#39ff63] text-2xl font-black">Troy Damon</h2>
               </div>
             </div>
 
-            <Link href="https://github.com/sifzerda" className="mt-12 border border-[#39ff63] text-[#39ff63] 
-            hover:bg-[#39ff63] hover:text-black active:bg-[#2ecc58] active:text-black active:translate-y-[1px] 
-            transition-all duration-150 uppercase tracking-[0.25em] text-xs py-3 font-bold inline-flex items-center 
-            justify-center select-none">
+            <Link
+              href="https://github.com/sifzerda"
+              className="mt-12 border border-[#39ff63] text-[#39ff63] py-3 text-center uppercase text-xs font-bold hover:bg-[#39ff63] hover:text-black transition"
+            >
               My GitHub
             </Link>
-          </aside>
 
+          </aside>
         </div>
       </div>
     </div>
