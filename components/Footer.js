@@ -24,10 +24,8 @@ export default function Footer() {
       <div className="flex items-center gap-4">
 
         {/* GitHub link */}
-        <a
-          href="https://github.com/sifzerda/next-portfolio"
-          target="_blank"
-          rel="noopener noreferrer"
+        <a href="https://github.com/sifzerda/next-portfolio"
+          target="_blank" rel="noopener noreferrer"
           className="group flex items-center gap-2 text-zinc-300 transition hover:text-[#39ff63]">
           <FaGithub className="text-base transition group-hover:text-[#39ff63]" />
           <span className="text-[10px] uppercase tracking-[0.2em] font-bold transition group-hover:text-[#39ff63]">

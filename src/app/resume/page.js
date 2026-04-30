@@ -55,7 +55,7 @@ export default function ResumePage() {
                 My Resume
               </h1>
 
-                            {/* Education */}
+              {/* Education */}
               <section className="mt-12 border-t border-zinc-300/20 pt-6">
                 <h2 className="text-[#39ff63] text-sm uppercase tracking-[0.25em] font-bold mb-6">
                   Education
@@ -87,7 +87,7 @@ export default function ResumePage() {
                       Frontend
                     </p>
                     <p className="text-[11px] tracking-[0.12em] text-zinc-200 leading-relaxed">
-                      HTML, CSS, JavaScript, TypeScript, jQuery, React, Next.js, React, Next.js, Tailwind, Bootstrap, Handlebars, SEO
+                      HTML, CSS, JavaScript, TypeScript, jQuery, React, Next.js, Tailwind, Redux, Bootstrap, Handlebars, Astro, SEO
                     </p>
                   </div>
 
@@ -96,7 +96,16 @@ export default function ResumePage() {
                       Backend
                     </p>
                     <p className="text-[11px] tracking-[0.12em] text-zinc-200 leading-relaxed">
-                      Node.js, APIs, Express, MySQL (Sequelize), GraphQL, MongoDB, REST, CRUD, Prisma, PostgreDB, JWT, Authentication, PWAs, Jest Testing, Context API, Redux
+                      Node.js, APIs, Express, GraphQL, JWT, Auth, PWAs, Jest Testing, Context API, Redux
+                    </p>
+                  </div>
+
+                  <div className="border border-zinc-300/20 p-4 bg-black/20">
+                    <p className="text-[10px] uppercase tracking-[0.25em] text-zinc-400 mb-2">
+                      Databases
+                    </p>
+                    <p className="text-[11px] tracking-[0.12em] text-zinc-200 leading-relaxed">
+                      MySQL (Sequelize), MongoDB, IndexedDB, Prisma, Postgres
                     </p>
                   </div>
 
@@ -105,7 +114,7 @@ export default function ResumePage() {
                       Other Tools
                     </p>
                     <p className="text-[11px] tracking-[0.12em] text-zinc-200 leading-relaxed">
-                      GitHub, Heroku, Vercel, Netlify, Render, Postman, Microsoft Azure Cloud, Serverless Architecture
+                      GitHub, Environment Management, State management, Figma, Responsive Design and Accessibility, MVC architecture, Heroku, Vercel, Netlify, Render, Postman, Microsoft Azure Cloud and AWS, WebSockets, Performance Optimization,Google Cloud, Serverless Architecture
                     </p>
                   </div>
 
