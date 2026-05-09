@@ -2,15 +2,15 @@
 
 ## Table of Contents
 
-1. Description
-2. Badges
-3. Visuals
-4. Installation
-5. Support
-6. Contributing 
-7. Authors and acknowledgment
-8. License
-9. Project status
+1. [Description](#description)
+2. [Badges](#badges)
+3. [Visuals](#visuals)
+4. [Installation](#installation)
+5. [Support](#support)
+6. [Contributing](#contributing) 
+7. [Authors and Acknowledgment](#authors-and-acknowledgment)
+8. [License](#license)
+9. [Project Status](#project-status)
 
 ## 1. Description
 

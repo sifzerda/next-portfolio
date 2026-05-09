@@ -114,7 +114,7 @@ export default function ResumePage() {
                       Other Tools
                     </p>
                     <p className="text-[11px] tracking-[0.12em] text-zinc-200 leading-relaxed">
-                      GitHub, Environment Management, State management, Figma, Responsive Design and Accessibility, MVC architecture, Heroku, Vercel, Netlify, Render, Postman, Microsoft Azure Cloud and AWS, WebSockets, Performance Optimization,Google Cloud, Serverless Architecture
+                      GitHub, Environment Management, State management, Figma, Responsive Design and Accessibility, MVC architecture, Heroku, Vercel, Netlify, Render, Postman, Microsoft Azure Cloud and AWS, WebSockets, Performance Optimization,Google Cloud, Serverless Architecture, Rust, Tauri
                     </p>
                   </div>
 
