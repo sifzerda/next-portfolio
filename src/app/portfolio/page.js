@@ -69,10 +69,10 @@ export default function PortfolioPage() {
     },
     {
       title: "Minesweeper",
-      description: "A frontend game of Minesweeper in Next.js. Originally fullstack, with React + Express + MongoDB + graphQL. Then refactored into a serverless Next app.",
+      description: "A frontend game of Minesweeper in Next.js. Previously fullstack, refactored into a serverless Next app wrapped in Tauri for offline desktop download.",
       image: "/mine2.png",
       link: "https://nx-minesweeper.vercel.app/",
-      tech: ["Next.js", "Vercel", "Tailwind"],
+      tech: ["Next.js", "Rust", "Tauri"],
     },
     {
       title: "Horror Map",
@@ -93,7 +93,7 @@ export default function PortfolioPage() {
       description: "A Text Editor app built with Javascript + HTML + CSS + Express Server. It utilizes PWA technologies, including Webpack + a Service Worker + IndexedDB for use and storage offline. Deployed on Render.",
       image: "/jate.jpg",
       link: "https://jate-text-editor-10.onrender.com/",
-      tech: ["Express", "Webpack", "Babel"],
+      tech: ["Service Worker", "Webpack", "Babel"],
     },
     {
       title: "MVC Tech Blog",
@@ -133,13 +133,13 @@ export default function PortfolioPage() {
   ];
 
   return (
-    <div className="w-full flex flex-col items-center justify-center p-4 pb-[120px]">
-      <div className="border border-zinc-300 bg-[radial-gradient(circle_at_top_left,_rgba(26,75,207,1),_transparent_60%)] rounded-sm cursor-default w-full max-w-7xl">
+    <div className="w-full flex flex-col items-center justify-center p-4 pb-30">
+      <div className="border border-zinc-300 bg-[radial-gradient(circle_at_top_left,_rgba(26,75,207,1), transparent_60%)] rounded-sm cursor-default w-full max-w-7xl">
 
         <div className="grid md:grid-cols-[1fr_280px]">
           {/* LEFT */}
           <div className="relative border-r border-zinc-300/60 p-6 md:p-8">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(70,140,255,0.15),_transparent_55%)] pointer-events-none" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(70,140,255,0.15), transparent_55%)] pointer-events-none" />
 
             <div className="relative z-10 flex flex-col gap-12">
               {/* HEADER */}
@@ -162,7 +162,7 @@ export default function PortfolioPage() {
                   <div key={idx} className="bg-[#0b1522] rounded-md p-4 flex flex-col border hover:border-[#39ff63] hover:brightness-75 transition">
 
                     {/* ✅ SQUARE IMAGE */}
-                    <div className="w-full aspect-square bg-black rounded-md mb-4 border border-zinc-300 p-[2px] flex items-center justify-center overflow-hidden">
+                    <div className="w-full aspect-square bg-black rounded-md mb-4 border border-zinc-300 p-0.5 flex items-center justify-center overflow-hidden">
                       <img
                         src={app.image}
                         alt={app.title}
@@ -202,7 +202,7 @@ export default function PortfolioPage() {
           </div>
 
           {/* RIGHT */}
-          <aside className="border border-zinc-300/60 bg-gradient-to-b from-[#08131f] via-[#1a4bcf] to-[#06111b] p-6 flex flex-col justify-between text-zinc-100">
+          <aside className="border border-zinc-300/60 bg-linear-to-b from-[#08131f] via-[#1a4bcf] to-[#06111b] p-6 flex flex-col justify-between text-zinc-100">
 
             <div className="flex flex-col gap-4">
               <div className="bg-[#0b1522] border border-zinc-500/30 px-3 py-2 text-[10px] uppercase">

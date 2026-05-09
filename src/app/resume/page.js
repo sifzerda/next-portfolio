@@ -28,20 +28,20 @@ export default function ResumePage() {
   const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   return (
-    <div className="w-full flex flex-col items-center justify-center p-4 pb-[120px]">
+    <div className="w-full flex flex-col items-center justify-center p-4 pb-30">
       <div className="
   border border-zinc-300
-  bg-[radial-gradient(circle_at_top_left,_rgba(26,75,207,1),_transparent_60%)]
+  bg-[radial-gradient(circle_at_top_left,_rgba(26,75,207,1), transparent_60%)]
   rounded-sm
   cursor-default
   w-full
   max-w-3xl
 ">
 
-        <div className="grid md:grid-cols-[1fr_260px] min-h-[600px] md:min-h-0">
+        <div className="grid md:grid-cols-[1fr_260px] min-h-150 md:min-h-0">
           {/* Left Section */}
           <div className="relative border-r border-zinc-300/60 p-6 md:p-8">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(70,140,255,0.15),_transparent_55%)] pointer-events-none" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(70,140,255,0.15), transparent_55%)] pointer-events-none" />
 
             <div className="relative z-10 h-full flex flex-col justify-between">
               <div className="flex items-center justify-between mb-6 uppercase text-[11px] tracking-[0.3em] text-zinc-100 font-semibold">
@@ -134,7 +134,7 @@ export default function ResumePage() {
           </div>
 
           {/* Right Aside */}
-          <aside className="border border-zinc-300/60 bg-gradient-to-b from-[#08131f] via-[#1a4bcf] to-[#06111b] p-6 flex flex-col justify-between text-zinc-100 min-h-full">
+          <aside className="border border-zinc-300/60 bg-linear-to-b from-[#08131f] via-[#1a4bcf] to-[#06111b] p-6 flex flex-col justify-between text-zinc-100 min-h-full">
             <div className="flex flex-col gap-4">
               <div className="flex flex-col gap-1 bg-[#0b1522] border border-zinc-500/30 rounded-sm px-3 py-2 text-[10px] uppercase tracking-[0.25em] w-full">
                 <div className="flex justify-between items-center w-full">
@@ -150,7 +150,7 @@ export default function ResumePage() {
                   <span className="text-[#39ff63] font-bold">{time}</span>
                 </div>
 
-                <div className="text-right text-white text-[8px] w-full break-words">
+                <div className="text-right text-white text-[8px] w-full wrap-break-word">
                   GMT {currentDateTime.getTimezoneOffset() <= 0 ? "+" : "-"}
                   {String(
                     Math.floor(
@@ -202,7 +202,7 @@ export default function ResumePage() {
             </div>
 
             <Link href="/portfolio" className="mt-12 border border-[#39ff63] text-[#39ff63] 
-            hover:bg-[#39ff63] hover:text-black active:bg-[#2ecc58] active:text-black active:translate-y-[1px] 
+            hover:bg-[#39ff63] hover:text-black active:bg-[#2ecc58] active:text-black active:translate-y-px 
             transition-all duration-150 uppercase tracking-[0.25em] text-xs py-3 font-bold inline-flex items-center 
             justify-center select-none">
               My Apps
