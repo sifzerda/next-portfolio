@@ -58,7 +58,7 @@ export default function PortfolioPage() {
       description: "Asteroids in React + Three.js using Miniplex ECS. Was originally a fullstack app, with React + Express + Node.js + MongoDB + graphql. Has been refactored into a serverless Next app.",
       image: "/aster.jpg",
       link: "https://reacteroids-mocha.vercel.app/",
-      tech: ["Next.js", "Three.js", "Miniplex" ],
+      tech: ["Next.js", "Three.js", "Miniplex"],
     },
     {
       title: "Solitaire",
