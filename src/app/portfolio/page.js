@@ -55,10 +55,10 @@ export default function PortfolioPage() {
     },
     {
       title: "Asteroids",
-      description: "The retro arcade game Asteroids, one using Matter.js and one using Three.js. Was originally a fullstack app, with React + Express + Node.js + MongoDB + graphql. Has been refactored into a serverless Next app + Postgres DB. Users can sign up, submit and view their best scores on their profile.",
+      description: "Asteroids in React + Three.js using Miniplex ECS. Was originally a fullstack app, with React + Express + Node.js + MongoDB + graphql. Has been refactored into a serverless Next app.",
       image: "/aster.jpg",
-      link: "https://nx-asteroids.vercel.app/",
-      tech: ["Next.js", "Matter.js", "Three.js"],
+      link: "https://reacteroids-mocha.vercel.app/",
+      tech: ["Next.js", "Three.js", "Miniplex" ],
     },
     {
       title: "Solitaire",
