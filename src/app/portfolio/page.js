@@ -48,9 +48,9 @@ export default function PortfolioPage() {
     },
     {
       title: "Eight Ball Pool",
-      description: "A game of 8 ball billiards made with the Matter.js engine. Originally a fullstack app with React + Express.js + Node.js + MongoDB + graphql. Has been refactored into a serverless Next app + Postgres DB. Users can sign up, play, submit and view their best scores on their profile.",
+      description: "Currently an in development sandbox. A game of 8 ball billiards in React + Three.js using Miniplex ECS. Originally a fullstack app with React + Express.js + Node.js + MongoDB + graphql. Has been refactored into a serverless Next app.",
       image: "/poolPic.jpg",
-      link: "https://nx-pool.vercel.app/",
+      link: "https://r-pool-sand.vercel.app/",
       tech: ["Next.js", "Matter.js", "Prisma"],
     },
     {
