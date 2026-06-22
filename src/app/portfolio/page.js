@@ -62,10 +62,10 @@ export default function PortfolioPage() {
     },
     {
       title: "Solitaire",
-      description: "The card game Solitaire made with react-draggable. Was a fullstack app, with React + Express + Node.js + MongoDB + graphql. Has been refactored into a serverless Next app. Users can sign up, submit and view their best times on their profile.",
+      description: "The card game Solitaire made in Next.js + Zustand store. Was a fullstack app, with React + Express + Node.js + MongoDB + graphql. Has been refactored into a serverless Next app + Rust and Tauri enabled downloadable exe.",
       image: "/solPic.jpg",
       link: "https://nx-solitaire.vercel.app/",
-      tech: ["Next.js", "react-draggable", "Prisma"],
+      tech: ["Next.js", "Zustand", "Tauri"],
     },
     {
       title: "Minesweeper",
