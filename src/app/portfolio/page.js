@@ -48,24 +48,34 @@ export default function PortfolioPage() {
     },
     {
       title: "Eight Ball Pool",
-      description: "Currently an in development sandbox. A game of 8 ball billiards in React + Three.js using Miniplex ECS. Originally a fullstack app with React + Express.js + Node.js + MongoDB + graphql. Has been refactored into a serverless Next app.",
+      description: "Currently in development sandbox. A game of 8 ball billiards in React + Three.js using Miniplex ECS. Originally a fullstack app with React + Express.js + Node.js + MongoDB + graphql. Has been refactored into a serverless Next app.",
       image: "/poolPic.jpg",
       link: "https://r-pool-sand.vercel.app/",
       tech: ["Next.js", "Matter.js", "Prisma"],
     },
+
     {
-      title: "Asteroids",
+      title: "Mini-Asteroids",
       description: "Asteroids in React + Three.js using Miniplex ECS. Was originally a fullstack app, with React + Express + Node.js + MongoDB + graphql. Has been refactored into a serverless Next app.",
-      image: "/aster.jpg",
+      image: "/miniaster.jpg",
       link: "https://reacteroids-mocha.vercel.app/",
-      tech: ["Next.js", "Three.js", "Miniplex"],
+      tech: ["React", "Three.js", "Miniplex"],
     },
+    
+    {
+      title: "bitECS Asteroids",
+      description: "Expanded Asteroids in React + Three.js using bitECS ECS + Zustand store, levels, bosses AI in Behavior3js and Yuka.",
+      image: "/bitaster.jpg",
+      link: "https://bitecs.vercel.app/",
+      tech: ["bitECS", "Three.js", "Behavior3js", "Yuka"],
+    },
+    
     {
       title: "Solitaire",
       description: "The card game Solitaire made in Next.js + Zustand store. Was a fullstack app, with React + Express + Node.js + MongoDB + graphql. Has been refactored into a serverless Next app + Rust and Tauri enabled downloadable exe.",
       image: "/solPic.jpg",
       link: "https://nx-solitaire.vercel.app/",
-      tech: ["Next.js", "Zustand", "Tauri"],
+      tech: ["Next.js", "Zustand", "Rust", "Tauri"],
     },
     {
       title: "Minesweeper",
