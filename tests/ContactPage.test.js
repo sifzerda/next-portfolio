@@ -3,8 +3,7 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import ContactPage from "../src/app/contact/page"
 
 // Mock fetch globally
-global.fetch = jest.fn(() =>
-  Promise.resolve({
+global.fetch = jest.fn(() => Promise.resolve({
     json: () => Promise.resolve({ success: true }),
   })
 );
@@ -31,8 +30,6 @@ describe("ContactPage Form", () => {
 
     fireEvent.click(screen.getByText(/Send Message/i));
 
-    expect(
-      await screen.findByText(/Thank you for your message!/i)
-    ).toBeInTheDocument();
+    expect(await screen.findByRole("heading", { name: /thank you!/i, })).toBeInTheDocument();
   });
 });
