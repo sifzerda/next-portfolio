@@ -76,7 +76,7 @@ export default function PortfolioPage() {
     {
       title: "bitECS Asteroids",
       description: "Expanded Asteroids in React + Three.js using bitECS ECS + Zustand store, levels, bosses AI in Behavior3js and Yuka.",
-      image: "/bitaster.jpg",
+      image: "/bitaster.png",
       link: "https://bitecs.vercel.app/",
       tech: ["bitECS", "Three.js", "Behavior3js", "Yuka"],
     },
