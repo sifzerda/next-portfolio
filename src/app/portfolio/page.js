@@ -32,6 +32,7 @@ export default function PortfolioPage() {
     //      link: "https://bandpage.vercel.app/",
     //      tech: ["React", "react-player", "YouTube Data API v3"],
     //    },
+
     {
       title: "Game of Life",
       description: "Plays out simulations of John Conway's Game of Life. Frontend React + Node.js. Play/pause/reset timed simulation, alter group size and quantity.",
@@ -39,6 +40,7 @@ export default function PortfolioPage() {
       link: "https://game-of-life-49sl.vercel.app/",
       tech: ["React", "JavaScript", "Vercel"],
     },
+
     {
       title: "Music Player",
       description: "A  site with a built in music player. A frontend SPA Router, React + Node.js + react-player. Preloaded with a playlist, songs can be played, paused, and skipped. Volume adjustment and song progress bar.",
@@ -46,9 +48,18 @@ export default function PortfolioPage() {
       link: "https://slotmachine-five.vercel.app/",
       tech: ["React", "Node.js", "react-player"],
     },
+
     {
-      title: "Eight Ball Pool",
-      description: "Currently in development sandbox. A game of 8 ball billiards in React + Three.js using Miniplex ECS. Originally a fullstack app with React + Express.js + Node.js + MongoDB + graphql. Has been refactored into a serverless Next app.",
+      title: "Eight Ball Pool in Three.js",
+      description: "Currently in development sandbox. A game of 8 ball billiards in React + Matter.js using Miniplex ECS. Originally a fullstack app with React + Express.js + Node.js + MongoDB + graphql. Has been refactored into a serverless Next app.",
+      image: "/pool2Pic.jpg",
+      link: "https://r-pool-sand.vercel.app/",
+      tech: ["Next.js", "Three.js", "Miniplex"],
+    },
+
+    {
+      title: "Eight Ball Pool in Matter.js",
+      description: "Currently in development sandbox. A game of 8 ball billiards in React + Matter.js using Miniplex ECS. Originally a fullstack app with React + Express.js + Node.js + MongoDB + graphql. Has been refactored into a serverless Next app.",
       image: "/poolPic.jpg",
       link: "https://r-pool-sand.vercel.app/",
       tech: ["Next.js", "Matter.js", "Prisma"],
@@ -61,7 +72,7 @@ export default function PortfolioPage() {
       link: "https://reacteroids-mocha.vercel.app/",
       tech: ["React", "Three.js", "Miniplex"],
     },
-    
+
     {
       title: "bitECS Asteroids",
       description: "Expanded Asteroids in React + Three.js using bitECS ECS + Zustand store, levels, bosses AI in Behavior3js and Yuka.",
@@ -69,7 +80,7 @@ export default function PortfolioPage() {
       link: "https://bitecs.vercel.app/",
       tech: ["bitECS", "Three.js", "Behavior3js", "Yuka"],
     },
-    
+
     {
       title: "Solitaire",
       description: "The card game Solitaire made in Next.js + Zustand store. Was a fullstack app, with React + Express + Node.js + MongoDB + graphql. Has been refactored into a serverless Next app + Rust and Tauri enabled downloadable exe.",
@@ -84,6 +95,7 @@ export default function PortfolioPage() {
       link: "https://nx-minesweeper.vercel.app/",
       tech: ["Next.js", "Rust", "Tauri"],
     },
+
     {
       title: "Horror Map",
       description: "This (unfinished) blog site provides a guide for horror fiction-writing. Formerly in React + MongoDB + graphql and deployed on Heroku, then refactored into a serverless SPA Router App in Next.js + Postgres-Neon DB. Users can sign up and leave comments on each page.",
@@ -98,6 +110,7 @@ export default function PortfolioPage() {
       link: "https://next-fiction.vercel.app/",
       tech: ["Next.js", "Vercel", "Neon Postgres"],
     },
+
     {
       title: "PWA Text Editor",
       description: "A Text Editor app built with Javascript + HTML + CSS + Express Server. It utilizes PWA technologies, including Webpack + a Service Worker + IndexedDB for use and storage offline. Deployed on Render.",
@@ -105,6 +118,7 @@ export default function PortfolioPage() {
       link: "https://jate-text-editor-10.onrender.com/",
       tech: ["Service Worker", "Webpack", "Babel"],
     },
+
     {
       title: "MVC Tech Blog",
       description: "A tech-themed blog with user Auth. It originally used Handlebars UI + Express server + MySQL database with Sequelize + deployed on Heroku. Then refactored into a serverless Next.js app + Postgres-Neon DB + deployed on Vercel.",
@@ -112,6 +126,7 @@ export default function PortfolioPage() {
       link: "https://nx-tech-blog.vercel.app/",
       tech: ["Handlebars", "Express", "Javascript"],
     },
+
     {
       title: "Express Note Taker",
       description: "This is a note-taking app which runs in node.js. The front end is created through HTML and CSS. It runs on an Express server, and note data is saved JSON and local storage for later retrieval. This app is deployed on Heroku.",
@@ -119,6 +134,7 @@ export default function PortfolioPage() {
       link: "https://note-taker.vercel.app/",
       tech: ["JavaScript", "Express", "CSS"],
     },
+
     {
       title: "Server-Side API Weather Dashboard",
       description: "A weather display dashboard, search by city name and return a 5 day forecast using the Open Weather Map API. Data is saved in local storage. HTML + CSS + Javascript + deployed on GitHub.",
@@ -126,6 +142,7 @@ export default function PortfolioPage() {
       link: "https://sifzerda.github.io/weather-dashboard/",
       tech: ["HTML", "CSS", "JavaScript"],
     },
+
     {
       title: "Third Party API Work Day Scheduler",
       description: "This is a note taking app to help create, store, and display daily plans and activities. It was created using HTML, CSS, and Javascript. Data can be deleted or stored data through local storage for later retrieval. It is deployed on GitHub.",
@@ -133,6 +150,7 @@ export default function PortfolioPage() {
       link: "https://sifzerda.github.io/workday-scheduler/",
       tech: ["HTML", "CSS", "JavaScript"],
     },
+
     {
       title: "Web API Coding Quiz",
       description: "A timed multiple-choice coding-themed quiz. HTML + CSS + Javascript. Score data is saved in local storage. Deployed on GitHub.",
@@ -140,6 +158,7 @@ export default function PortfolioPage() {
       link: "https://sifzerda.github.io/coding-quiz/",
       tech: ["HTML", "CSS", "JavaScript"],
     },
+    
   ];
 
   return (
