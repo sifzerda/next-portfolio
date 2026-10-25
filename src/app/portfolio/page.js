@@ -84,7 +84,7 @@ export default function PortfolioPage() {
     {
       title: "Solitaire",
       description: "The card game Solitaire made in Next.js + Zustand store. Was a fullstack app, with React + Express + Node.js + MongoDB + graphql. Has been refactored into a serverless Next app + Rust and Tauri enabled downloadable exe.",
-      image: "/solPic.jpg",
+      image: "/solPic.png",
       link: "https://nx-solitaire.vercel.app/",
       tech: ["Next.js", "Zustand", "Rust", "Tauri"],
     },
