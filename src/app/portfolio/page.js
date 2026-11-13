@@ -1,4 +1,4 @@
-// portfolio page.js
+// src/app/portfolio/page.js
 "use client";
 
 import Link from "next/link";
@@ -34,6 +34,14 @@ export default function PortfolioPage() {
     //    },
 
     {
+      title: "Next Msg",
+      description: "An online social chat/messenger app demo built with Next.js and Supabase.",
+      image: "/msgPic.jpg",
+      link: "https://nx-msg.vercel.app/",
+      tech: ["Next.js", "Zustand", "Supabase"],
+    },
+
+    {
       title: "Game of Life",
       description: "Plays out simulations of John Conway's Game of Life. Frontend React + Node.js. Play/pause/reset timed simulation, alter group size and quantity.",
       image: "/gamePic.jpg",
@@ -41,46 +49,70 @@ export default function PortfolioPage() {
       tech: ["React", "JavaScript", "Vercel"],
     },
 
+    /* 
+{
+  title: "Redux e-Store Demo",
+  description: "Coming soon",
+ 
+  tech: ["React", "JavaScript", "Vercel"],
+},
+*/
+    /* 
+ {
+   title: "Zustand e-Store Demo",
+   description: "Coming soon",
+ 
+   tech: ["React", "JavaScript", "Vercel"],
+ },
+*/
     {
       title: "Music Player",
-      description: "A  site with a built in music player. A frontend SPA Router, React + Node.js + react-player. Preloaded with a playlist, songs can be played, paused, and skipped. Volume adjustment and song progress bar.",
+      description: "A site with a built in music player. A frontend SPA Router, React + Node.js + react-player. Preloaded with a playlist, songs can be played, paused, and skipped. Volume adjustment and song progress bar.",
       image: "/musicPic.jpg",
       link: "https://slotmachine-five.vercel.app/",
       tech: ["React", "Node.js", "react-player"],
     },
 
     {
-      title: "Eight Ball Pool in Three.js",
-      description: "Currently in development sandbox. A game of 8 ball billiards in React + Matter.js using Miniplex ECS. Originally a fullstack app with React + Express.js + Node.js + MongoDB + graphql. Has been refactored into a serverless Next app.",
+      title: "Mini Golf in R3F",
+      description: "Currently in development. A game of Mini Golf in React + Three.js using Miniplex ECS.",
+      image: "/minigolfPic.jpg",
+      link: "https://miniplex-minigolf.vercel.app/",
+      tech: ["Three.js", "Miniplex", "Zustand"],
+    },
+
+    {
+      title: "Eight Ball Pool in R3F",
+      description: "A game of 8 ball billiards in React + Three.js using Miniplex ECS.",
       image: "/pool2Pic.jpg",
       link: "https://r-pool-sand.vercel.app/",
-      tech: ["Next.js", "Three.js", "Miniplex"],
+      tech: ["Three.js", "Miniplex", "Zustand"],
     },
-
+    /* 
+        {
+          title: "Eight Ball Pool in Matter.js",
+          description: "Currently in development sandbox. A game of 8 ball billiards in React + Matter.js using Miniplex ECS. Originally a fullstack app with React + Express.js + Node.js + MongoDB + graphql. Has been refactored into a serverless Next app.",
+          image: "/poolPic.jpg",
+          link: "https://nx-pool.vercel.app/",
+          tech: ["Next.js", "Matter.js", "Prisma"],
+        },
+    */
     {
-      title: "Eight Ball Pool in Matter.js",
-      description: "Currently in development sandbox. A game of 8 ball billiards in React + Matter.js using Miniplex ECS. Originally a fullstack app with React + Express.js + Node.js + MongoDB + graphql. Has been refactored into a serverless Next app.",
-      image: "/poolPic.jpg",
-      link: "https://nx-pool.vercel.app/",
-      tech: ["Next.js", "Matter.js", "Prisma"],
-    },
-
-    {
-      title: "Mini-Asteroids",
-      description: "Asteroids in React + Three.js using Miniplex ECS. Was originally a fullstack app, with React + Express + Node.js + MongoDB + graphql. Has been refactored into a serverless Next app.",
-      image: "/miniaster.jpg",
-      link: "https://reacteroids-mocha.vercel.app/",
-      tech: ["React", "Three.js", "Miniplex"],
-    },
-
-    {
-      title: "bitECS Asteroids",
+      title: "bitECS Asteroids in R3F",
       description: "Expanded Asteroids in React + Three.js using bitECS ECS + Zustand store, levels, bosses AI in Behavior3js and Yuka.",
       image: "/bitaster.png",
       link: "https://bitecs.vercel.app/",
-      tech: ["bitECS", "Three.js", "Behavior3js", "Yuka"],
+      tech: ["bitECS", "Three.js", "Zustand"],
     },
-
+    /* 
+        {
+          title: "Asteroids in R3F",
+          description: "Asteroids in React + Three.js using Miniplex ECS. Was originally a fullstack app, with React + Express + Node.js + MongoDB + graphql. Has been refactored into a serverless Next app.",
+          image: "/miniaster.jpg",
+          link: "https://reacteroids-mocha.vercel.app/",
+          tech: ["React", "Three.js", "Miniplex"],
+        },
+    */
     {
       title: "Solitaire",
       description: "The card game Solitaire made in Next.js + Zustand store. Was a fullstack app, with React + Express + Node.js + MongoDB + graphql. Has been refactored into a serverless Next app + Rust and Tauri enabled downloadable exe.",
@@ -158,7 +190,7 @@ export default function PortfolioPage() {
       link: "https://sifzerda.github.io/coding-quiz/",
       tech: ["HTML", "CSS", "JavaScript"],
     },
-    
+
   ];
 
   return (
